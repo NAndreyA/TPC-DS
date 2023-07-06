@@ -18,5 +18,4 @@ CREATE TABLE tpcds.customer (
     c_email_address character varying(50),
     c_last_review_date integer
 )
-WITH (:SMALL_STORAGE)
-:DISTRIBUTED_BY;
+DISTRIBUTED RANDOMLY;
