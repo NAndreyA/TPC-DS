@@ -26,5 +26,4 @@ CREATE TABLE tpcds.web_site (
     web_gmt_offset numeric(5,2),
     web_tax_percentage numeric(5,2)
 )
-WITH (:SMALL_STORAGE)
-:DISTRIBUTED_BY;
+DISTRIBUTED RANDOMLY;
