@@ -6,5 +6,4 @@ CREATE TABLE tpcds.ship_mode (
     sm_carrier character varying(20),
     sm_contract character varying(20)
 )
-WITH (:SMALL_STORAGE)
-:DISTRIBUTED_BY;
+DISTRIBUTED RANDOMLY;
