@@ -29,5 +29,4 @@ CREATE TABLE tpcds.store (
     s_gmt_offset numeric(5,2),
     s_tax_precentage numeric(5,2)
 )
-WITH (:SMALL_STORAGE)
-:DISTRIBUTED_BY;
+DISTRIBUTED RANDOMLY;
