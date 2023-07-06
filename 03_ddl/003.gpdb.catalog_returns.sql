@@ -27,9 +27,4 @@ CREATE TABLE tpcds.catalog_returns (
     cr_store_credit numeric(7,2),
     cr_net_loss numeric(7,2)
 )
-WITH (:MEDIUM_STORAGE)
-:DISTRIBUTED_BY
-partition by range(cr_returned_date_sk)
-(start(2450815) INCLUSIVE end(2453005) INCLUSIVE every (8),
-default partition others)
-;
+DISTRIBUTED RANDOMLY;
