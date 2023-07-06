@@ -9,5 +9,4 @@ CREATE TABLE tpcds.customer_demographics (
     cd_dep_employed_count integer,
     cd_dep_college_count integer
 )
-WITH (:SMALL_STORAGE)
-:DISTRIBUTED_BY;
+DISTRIBUTED RANDOMLY;
