@@ -23,8 +23,4 @@ CREATE TABLE tpcds.store_sales (
     ss_net_paid_inc_tax numeric(7,2),
     ss_net_profit numeric(7,2)
 )
-WITH (:LARGE_STORAGE)
-:DISTRIBUTED_BY
-PARTITION BY RANGE (ss_sold_date_sk)
-(start(2450815) INCLUSIVE end(2453005) INCLUSIVE every (10),
-default partition others);
+DISTRIBUTED RANDOMLY;
