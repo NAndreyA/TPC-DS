@@ -14,5 +14,4 @@ CREATE TABLE tpcds.web_page (
     wp_image_count integer,
     wp_max_ad_count integer
 )
-WITH (:SMALL_STORAGE)
-:DISTRIBUTED_BY;
+DISTRIBUTED RANDOMLY;
