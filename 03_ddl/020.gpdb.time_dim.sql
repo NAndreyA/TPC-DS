@@ -10,4 +10,5 @@ CREATE TABLE tpcds.time_dim (
     t_sub_shift character(20),
     t_meal_time character(20)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:SMALL_STORAGE)
+:DISTRIBUTED_BY;
