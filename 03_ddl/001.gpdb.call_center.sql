@@ -31,4 +31,5 @@ CREATE TABLE tpcds.call_center (
     cc_gmt_offset numeric(5,2),
     cc_tax_percentage numeric(5,2)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:SMALL_STORAGE)
+:DISTRIBUTED_BY;
