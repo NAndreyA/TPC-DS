@@ -20,4 +20,8 @@ CREATE TABLE tpcds.store_returns (
     sr_store_credit numeric(7,2),
     sr_net_loss numeric(7,2)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:MEDIUM_STORAGE)
+:DISTRIBUTED_BY
+partition by range(sr_returned_date_sk)
+(start(2450815) INCLUSIVE end(2453005) INCLUSIVE every (100),
+default partition others);
