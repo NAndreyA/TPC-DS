@@ -34,4 +34,8 @@ CREATE TABLE tpcds.catalog_sales (
     cs_net_paid_inc_ship_tax numeric(7,2),
     cs_net_profit numeric(7,2)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:LARGE_STORAGE)
+:DISTRIBUTED_BY
+PARTITION BY RANGE (cs_sold_date_sk)
+(start(2450815) INCLUSIVE end(2453005) INCLUSIVE every (28),
+default partition others);
