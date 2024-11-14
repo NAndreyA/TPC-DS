@@ -13,4 +13,5 @@ CREATE TABLE tpcds.customer_address (
     ca_gmt_offset numeric(5,2),
     ca_location_type character varying(20)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:SMALL_STORAGE)
+:DISTRIBUTED_BY;
