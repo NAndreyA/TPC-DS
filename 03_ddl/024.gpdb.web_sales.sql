@@ -34,4 +34,8 @@ CREATE TABLE tpcds.web_sales (
     ws_net_paid_inc_ship_tax numeric(7,2),
     ws_net_profit numeric(7,2)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:MEDIUM_STORAGE)
+:DISTRIBUTED_BY
+partition by range(ws_sold_date_sk)
+(start(2450815) INCLUSIVE end(2453005) INCLUSIVE every (40),
+default partition others);
