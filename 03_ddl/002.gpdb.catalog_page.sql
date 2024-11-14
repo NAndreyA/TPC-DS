@@ -9,4 +9,5 @@ CREATE TABLE tpcds.catalog_page (
     cp_description character varying(100),
     cp_type character varying(100)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:SMALL_STORAGE)
+:DISTRIBUTED_BY;
