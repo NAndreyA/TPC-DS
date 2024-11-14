@@ -19,4 +19,5 @@ CREATE TABLE tpcds.promotion (
     p_purpose character varying(15),
     p_discount_active character(1)
 )
-DISTRIBUTED RANDOMLY;
+WITH (:SMALL_STORAGE)
+:DISTRIBUTED_BY;
