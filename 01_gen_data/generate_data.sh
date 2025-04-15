@@ -35,7 +35,7 @@ $PWD/dsdgen -scale $GEN_DATA_SCALE -dir $DATA_DIRECTORY -parallel $PARALLEL -chi
 ################################################################
 #Edit for Gulevich 20250415
 ################################################################
-declare -a tables=("web_sales")
+declare -a tables=("call_center" "catalog_page" "catalog_returns" "catalog_sales" "customer" "customer_address" "customer_demographics" "date_dim" "household_demographics" "income_band" "inventory" "item" "promotion" "reason" "ship_mode" "store" "store_returns" "store_sales" "time_dim" "warehouse" "web_page" "web_returns" "web_sales" "web_site")
 
 for i in "${tables[@]}"; do
 	filename="$DATA_DIRECTORY/"$i"_"$CHILD"_"$PARALLEL".dat"
@@ -55,7 +55,7 @@ if [ "$SINGLE_SEGMENT" -eq "1" ]; then
  	################################################################
 	#Edit for Gulevich 20250415
 	################################################################
-	declare -a tables=("web_sales")
+	declare -a tables=("call_center" "catalog_page" "catalog_returns" "catalog_sales" "customer" "customer_address" "customer_demographics" "date_dim" "household_demographics" "income_band" "inventory" "item" "promotion" "reason" "ship_mode" "store" "store_returns" "store_sales" "time_dim" "warehouse" "web_page" "web_returns" "web_sales" "web_site")
 
 	for i in "${tables[@]}"; do
 		filename="$DATA_DIRECTORY/"$i"_"$CHILD"_"$PARALLEL".dat"
