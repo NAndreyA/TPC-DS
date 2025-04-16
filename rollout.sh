@@ -92,4 +92,4 @@ fi
 #for i in $(ls -d $PWD/0*); do
 #	echo "$i/rollout.sh"
 #	$i/rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $SINGLE_USER_ITERATIONS
-done
+#done
