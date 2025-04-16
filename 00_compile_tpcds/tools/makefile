@@ -406,19 +406,19 @@ grammar.o: list.h mathops.h decimal.h date.h
 s_brand.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_brand.o: address.h constants.h s_brand.h print.h columns.h build_support.h
 s_brand.o: pricing.h tables.h parallel.h
-s_customer_address.o: config.h porting.h w_customer_address.h constants.h
-s_customer_address.o: address.h s_customer_address.h date.h mathops.h
-s_customer_address.o: decimal.h genrand.h dist.h columns.h build_support.h
-s_customer_address.o: pricing.h print.h tables.h nulls.h tdefs.h
-s_customer_address.o: tdef_functions.h
+#s_customer_address.o: config.h porting.h w_customer_address.h constants.h
+#s_customer_address.o: address.h s_customer_address.h date.h mathops.h
+#s_customer_address.o: decimal.h genrand.h dist.h columns.h build_support.h
+#s_customer_address.o: pricing.h print.h tables.h nulls.h tdefs.h
+#s_customer_address.o: tdef_functions.h
 scaling.o: config.h porting.h dist.h constants.h genrand.h decimal.h
 scaling.o: mathops.h date.h address.h columns.h tdefs.h tables.h
 scaling.o: tdef_functions.h error_msg.h r_params.h w_inventory.h scaling.h
 scaling.o: tpcds.idx.h print.h parallel.h scd.h
-s_call_center.o: config.h porting.h s_call_center.h genrand.h decimal.h
-s_call_center.o: mathops.h date.h dist.h address.h constants.h r_params.h
-s_call_center.o: scaling.h tables.h build_support.h columns.h pricing.h
-s_call_center.o: print.h w_call_center.h permute.h scd.h
+#s_call_center.o: config.h porting.h s_call_center.h genrand.h decimal.h
+#s_call_center.o: mathops.h date.h dist.h address.h constants.h r_params.h
+#s_call_center.o: scaling.h tables.h build_support.h columns.h pricing.h
+#s_call_center.o: print.h w_call_center.h permute.h scd.h
 s_catalog.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_catalog.o: address.h constants.h s_catalog.h print.h columns.h
 s_catalog.o: build_support.h pricing.h misc.h tables.h
@@ -434,19 +434,19 @@ s_catalog_order_lineitem.o: s_catalog_order_lineitem.h pricing.h
 s_catalog_order_lineitem.o: s_catalog_order.h w_web_sales.h print.h columns.h
 s_catalog_order_lineitem.o: build_support.h tables.h parallel.h permute.h
 s_catalog_order_lineitem.o: scaling.h scd.h
-s_catalog_page.o: config.h porting.h genrand.h decimal.h mathops.h date.h
-s_catalog_page.o: dist.h address.h constants.h s_catalog_page.h
-s_catalog_page.o: w_catalog_page.h print.h columns.h build_support.h
-s_catalog_page.o: pricing.h tables.h scaling.h tdef_functions.h validate.h
-s_catalog_page.o: parallel.h
+#s_catalog_page.o: config.h porting.h genrand.h decimal.h mathops.h date.h
+#s_catalog_page.o: dist.h address.h constants.h s_catalog_page.h
+#s_catalog_page.o: w_catalog_page.h print.h columns.h build_support.h
+#s_catalog_page.o: pricing.h tables.h scaling.h tdef_functions.h validate.h
+#s_catalog_page.o: parallel.h
 s_catalog_promotional_item.o: config.h porting.h genrand.h decimal.h
 s_catalog_promotional_item.o: mathops.h date.h dist.h address.h constants.h
 s_catalog_promotional_item.o: s_catalog_promotional_item.h print.h columns.h
 s_catalog_promotional_item.o: build_support.h pricing.h tables.h
-s_catalog_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
-s_catalog_returns.o: dist.h address.h constants.h s_catalog_returns.h
-s_catalog_returns.o: pricing.h s_catalog_order.h s_catalog_order_lineitem.h
-s_catalog_returns.o: print.h columns.h build_support.h tables.h parallel.h
+#s_catalog_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
+#s_catalog_returns.o: dist.h address.h constants.h s_catalog_returns.h
+#s_catalog_returns.o: pricing.h s_catalog_order.h s_catalog_order_lineitem.h
+#s_catalog_returns.o: print.h columns.h build_support.h tables.h parallel.h
 s_category.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_category.o: address.h constants.h s_category.h print.h columns.h
 s_category.o: build_support.h pricing.h tables.h misc.h
@@ -456,21 +456,21 @@ s_class.o: pricing.h tables.h misc.h parallel.h
 s_company.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_company.o: address.h constants.h s_company.h print.h columns.h
 s_company.o: build_support.h pricing.h tables.h parallel.h
-s_customer.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_customer.o: address.h constants.h s_customer.h print.h columns.h
-s_customer.o: build_support.h pricing.h tables.h scaling.h parallel.h
-s_customer.o: w_customer_demographics.h w_customer_address.h permute.h
+#s_customer.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_customer.o: address.h constants.h s_customer.h print.h columns.h
+#s_customer.o: build_support.h pricing.h tables.h scaling.h parallel.h
+#s_customer.o: w_customer_demographics.h w_customer_address.h permute.h
 s_division.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_division.o: address.h constants.h s_division.h print.h columns.h
 s_division.o: build_support.h pricing.h tables.h parallel.h
-s_inventory.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_inventory.o: address.h constants.h s_inventory.h print.h columns.h
-s_inventory.o: build_support.h pricing.h tables.h r_params.h parallel.h
-s_inventory.o: scaling.h scd.h
-s_item.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_item.o: address.h constants.h s_item.h w_item.h print.h columns.h
-s_item.o: build_support.h pricing.h tables.h misc.h parallel.h permute.h
-s_item.o: scaling.h scd.h tdef_functions.h r_params.h
+#s_inventory.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_inventory.o: address.h constants.h s_inventory.h print.h columns.h
+#s_inventory.o: build_support.h pricing.h tables.h r_params.h parallel.h
+#s_inventory.o: scaling.h scd.h
+#s_item.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_item.o: address.h constants.h s_item.h w_item.h print.h columns.h
+#s_item.o: build_support.h pricing.h tables.h misc.h parallel.h permute.h
+#s_item.o: scaling.h scd.h tdef_functions.h r_params.h
 s_manager.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_manager.o: address.h constants.h s_manager.h print.h columns.h
 s_manager.o: build_support.h pricing.h tables.h parallel.h
@@ -487,29 +487,29 @@ s_pline.o: permute.h scd.h
 s_product.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_product.o: address.h constants.h s_product.h print.h columns.h
 s_product.o: build_support.h pricing.h tables.h parallel.h
-s_promotion.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_promotion.o: address.h constants.h s_promotion.h w_promotion.h print.h
-s_promotion.o: columns.h build_support.h pricing.h tables.h misc.h parallel.h
-s_promotion.o: permute.h scaling.h tdef_functions.h scd.h r_params.h
+#s_promotion.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_promotion.o: address.h constants.h s_promotion.h w_promotion.h print.h
+#s_promotion.o: columns.h build_support.h pricing.h tables.h misc.h parallel.h
+#s_promotion.o: permute.h scaling.h tdef_functions.h scd.h r_params.h
 s_purchase.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_purchase.o: address.h constants.h s_purchase.h s_pline.h pricing.h
 s_purchase.o: s_store_returns.h print.h columns.h build_support.h tables.h
 s_purchase.o: r_params.h misc.h scaling.h parallel.h
-s_reason.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_reason.o: address.h constants.h s_reason.h print.h columns.h
-s_reason.o: build_support.h pricing.h tables.h misc.h parallel.h
-s_store.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_store.o: address.h constants.h s_store.h w_store.h print.h columns.h
-s_store.o: build_support.h pricing.h tables.h parallel.h permute.h scaling.h
-s_store.o: scd.h
+#s_reason.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_reason.o: address.h constants.h s_reason.h print.h columns.h
+#s_reason.o: build_support.h pricing.h tables.h misc.h parallel.h
+#s_store.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_store.o: address.h constants.h s_store.h w_store.h print.h columns.h
+#s_store.o: build_support.h pricing.h tables.h parallel.h permute.h scaling.h
+#s_store.o: scd.h
 s_store_promotional_item.o: config.h porting.h genrand.h decimal.h mathops.h
 s_store_promotional_item.o: date.h dist.h address.h constants.h
 s_store_promotional_item.o: s_store_promotional_item.h print.h columns.h
 s_store_promotional_item.o: build_support.h pricing.h tables.h parallel.h
-s_store_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
-s_store_returns.o: dist.h address.h constants.h s_store_returns.h pricing.h
-s_store_returns.o: s_purchase.h s_pline.h print.h columns.h build_support.h
-s_store_returns.o: tables.h parallel.h
+#s_store_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
+#s_store_returns.o: dist.h address.h constants.h s_store_returns.h pricing.h
+#s_store_returns.o: s_purchase.h s_pline.h print.h columns.h build_support.h
+#s_store_returns.o: tables.h parallel.h
 s_subcategory.o: config.h porting.h genrand.h decimal.h mathops.h date.h
 s_subcategory.o: dist.h address.h constants.h s_subcategory.h print.h
 s_subcategory.o: columns.h build_support.h pricing.h tables.h misc.h
@@ -517,141 +517,141 @@ s_subcategory.o: parallel.h
 s_subclass.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
 s_subclass.o: address.h constants.h s_subclass.h print.h columns.h
 s_subclass.o: build_support.h pricing.h tables.h misc.h parallel.h
-s_warehouse.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_warehouse.o: address.h constants.h s_warehouse.h w_warehouse.h print.h
-s_warehouse.o: columns.h build_support.h pricing.h tables.h misc.h parallel.h
-s_warehouse.o: permute.h scaling.h
-s_web_order.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_web_order.o: address.h constants.h s_web_order.h print.h columns.h
-s_web_order.o: build_support.h pricing.h tables.h misc.h
-s_web_order.o: s_web_order_lineitem.h params.h r_params.h release.h scaling.h
-s_web_order.o: w_web_sales.h s_web_returns.h parallel.h
-s_web_order_lineitem.o: config.h porting.h genrand.h decimal.h mathops.h
-s_web_order_lineitem.o: date.h dist.h address.h constants.h
-s_web_order_lineitem.o: s_web_order_lineitem.h pricing.h s_web_order.h
-s_web_order_lineitem.o: print.h columns.h build_support.h tables.h
-s_web_order_lineitem.o: w_web_sales.h parallel.h permute.h scaling.h scd.h
-s_web_page.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_web_page.o: address.h constants.h s_web_page.h w_web_page.h print.h
-s_web_page.o: columns.h build_support.h pricing.h tables.h scaling.h
-s_web_page.o: parallel.h permute.h scd.h tdef_functions.h
-s_web_promotinal_item.o: config.h porting.h genrand.h decimal.h mathops.h
-s_web_promotinal_item.o: date.h dist.h address.h constants.h
-s_web_promotinal_item.o: s_web_promotional_item.h print.h columns.h
-s_web_promotinal_item.o: build_support.h pricing.h tables.h parallel.h
-s_web_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
-s_web_returns.o: dist.h address.h constants.h s_web_returns.h pricing.h
-s_web_returns.o: print.h columns.h build_support.h tables.h w_web_sales.h
-s_web_returns.o: s_web_order.h s_web_order_lineitem.h parallel.h
-s_web_site.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-s_web_site.o: address.h constants.h s_web_site.h w_web_site.h print.h
-s_web_site.o: columns.h build_support.h pricing.h tables.h scaling.h
-s_web_site.o: permute.h scd.h
+#s_warehouse.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_warehouse.o: address.h constants.h s_warehouse.h w_warehouse.h print.h
+#s_warehouse.o: columns.h build_support.h pricing.h tables.h misc.h parallel.h
+#s_warehouse.o: permute.h scaling.h
+#s_web_order.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_web_order.o: address.h constants.h s_web_order.h print.h columns.h
+#s_web_order.o: build_support.h pricing.h tables.h misc.h
+#s_web_order.o: s_web_order_lineitem.h params.h r_params.h release.h scaling.h
+#s_web_order.o: w_web_sales.h s_web_returns.h parallel.h
+#s_web_order_lineitem.o: config.h porting.h genrand.h decimal.h mathops.h
+#s_web_order_lineitem.o: date.h dist.h address.h constants.h
+#s_web_order_lineitem.o: s_web_order_lineitem.h pricing.h s_web_order.h
+#s_web_order_lineitem.o: print.h columns.h build_support.h tables.h
+#s_web_order_lineitem.o: w_web_sales.h parallel.h permute.h scaling.h scd.h
+#s_web_page.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_web_page.o: address.h constants.h s_web_page.h w_web_page.h print.h
+#s_web_page.o: columns.h build_support.h pricing.h tables.h scaling.h
+#s_web_page.o: parallel.h permute.h scd.h tdef_functions.h
+#s_web_promotinal_item.o: config.h porting.h genrand.h decimal.h mathops.h
+#s_web_promotinal_item.o: date.h dist.h address.h constants.h
+#s_web_promotinal_item.o: s_web_promotional_item.h print.h columns.h
+#s_web_promotinal_item.o: build_support.h pricing.h tables.h parallel.h
+#s_web_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
+#s_web_returns.o: dist.h address.h constants.h s_web_returns.h pricing.h
+#s_web_returns.o: print.h columns.h build_support.h tables.h w_web_sales.h
+#s_web_returns.o: s_web_order.h s_web_order_lineitem.h parallel.h
+#s_web_site.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#s_web_site.o: address.h constants.h s_web_site.h w_web_site.h print.h
+#s_web_site.o: columns.h build_support.h pricing.h tables.h scaling.h
+#s_web_site.o: permute.h scd.h
 s_zip_to_gmt.o: config.h porting.h genrand.h decimal.h mathops.h date.h
 s_zip_to_gmt.o: dist.h address.h constants.h s_zip_to_gmt.h print.h columns.h
 s_zip_to_gmt.o: build_support.h pricing.h tables.h tdef_functions.h
 s_zip_to_gmt.o: r_params.h parallel.h tdefs.h
-w_call_center.o: config.h porting.h w_call_center.h constants.h pricing.h
-w_call_center.o: decimal.h mathops.h address.h date.h genrand.h dist.h
-w_call_center.o: r_params.h scaling.h columns.h tables.h misc.h
-w_call_center.o: build_support.h print.h tdefs.h tdef_functions.h nulls.h
-w_call_center.o: scd.h
-w_catalog_page.o: config.h porting.h constants.h w_catalog_page.h date.h
-w_catalog_page.o: mathops.h decimal.h genrand.h dist.h address.h
-w_catalog_page.o: build_support.h columns.h pricing.h misc.h print.h tables.h
-w_catalog_page.o: scaling.h nulls.h tdefs.h tdef_functions.h
-w_catalog_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
-w_catalog_returns.o: dist.h address.h constants.h w_catalog_returns.h
-w_catalog_returns.o: pricing.h w_catalog_sales.h print.h columns.h
-w_catalog_returns.o: build_support.h tables.h nulls.h tdefs.h
-w_catalog_returns.o: tdef_functions.h parallel.h
-w_catalog_sales.o: config.h porting.h w_catalog_sales.h pricing.h decimal.h
-w_catalog_sales.o: mathops.h w_catalog_returns.h date.h genrand.h dist.h
-w_catalog_sales.o: address.h constants.h columns.h tables.h build_support.h
-w_catalog_sales.o: print.h nulls.h tdefs.h tdef_functions.h scaling.h
-w_catalog_sales.o: permute.h params.h r_params.h release.h parallel.h scd.h
-w_customer_address.o: config.h porting.h w_customer_address.h constants.h
-w_customer_address.o: address.h date.h mathops.h decimal.h genrand.h dist.h
-w_customer_address.o: columns.h build_support.h pricing.h print.h tables.h
-w_customer_address.o: nulls.h tdefs.h tdef_functions.h
-w_customer.o: config.h porting.h constants.h columns.h w_customer.h genrand.h
-w_customer.o: decimal.h mathops.h date.h dist.h address.h build_support.h
-w_customer.o: pricing.h tables.h print.h nulls.h tdefs.h tdef_functions.h
-w_customer_demographics.o: config.h porting.h w_customer_demographics.h
-w_customer_demographics.o: genrand.h decimal.h mathops.h date.h dist.h
-w_customer_demographics.o: address.h constants.h columns.h build_support.h
-w_customer_demographics.o: pricing.h tables.h print.h nulls.h tdefs.h
-w_customer_demographics.o: tdef_functions.h sparse.h
-w_datetbl.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-w_datetbl.o: address.h constants.h w_datetbl.h print.h columns.h
-w_datetbl.o: build_support.h pricing.h tables.h nulls.h tdefs.h
-w_datetbl.o: tdef_functions.h
-w_household_demographics.o: config.h porting.h genrand.h decimal.h mathops.h
-w_household_demographics.o: date.h dist.h address.h constants.h
-w_household_demographics.o: w_household_demographics.h print.h columns.h
-w_household_demographics.o: build_support.h pricing.h tables.h nulls.h
-w_household_demographics.o: tdefs.h tdef_functions.h sparse.h
-w_income_band.o: config.h porting.h genrand.h decimal.h mathops.h date.h
-w_income_band.o: dist.h address.h constants.h w_income_band.h print.h
-w_income_band.o: columns.h build_support.h pricing.h tables.h nulls.h tdefs.h
-w_income_band.o: tdef_functions.h
-w_inventory.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-w_inventory.o: address.h constants.h w_inventory.h print.h columns.h
-w_inventory.o: build_support.h pricing.h tables.h scaling.h nulls.h tdefs.h
-w_inventory.o: tdef_functions.h scd.h
-w_item.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-w_item.o: address.h constants.h w_item.h print.h columns.h build_support.h
-w_item.o: pricing.h tables.h misc.h nulls.h tdefs.h tdef_functions.h scd.h
-w_promotion.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-w_promotion.o: address.h constants.h w_promotion.h print.h columns.h
-w_promotion.o: build_support.h pricing.h tables.h misc.h nulls.h tdefs.h
-w_promotion.o: tdef_functions.h
-w_reason.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-w_reason.o: address.h constants.h w_reason.h print.h columns.h
-w_reason.o: build_support.h pricing.h tables.h nulls.h tdefs.h
-w_reason.o: tdef_functions.h
-w_ship_mode.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
-w_ship_mode.o: address.h constants.h w_ship_mode.h print.h columns.h
-w_ship_mode.o: build_support.h pricing.h tables.h nulls.h tdefs.h
-w_ship_mode.o: tdef_functions.h
-w_store.o: config.h porting.h constants.h w_store.h address.h decimal.h
-w_store.o: mathops.h date.h genrand.h dist.h build_support.h columns.h
-w_store.o: pricing.h misc.h print.h tables.h scaling.h nulls.h tdefs.h
-w_store.o: tdef_functions.h scd.h
-w_store_returns.o: config.h porting.h w_store_returns.h pricing.h decimal.h
-w_store_returns.o: mathops.h w_store_sales.h constants.h tables.h print.h
-w_store_returns.o: columns.h genrand.h date.h dist.h address.h
-w_store_returns.o: build_support.h nulls.h tdefs.h tdef_functions.h
+#w_call_center.o: config.h porting.h w_call_center.h constants.h pricing.h
+#w_call_center.o: decimal.h mathops.h address.h date.h genrand.h dist.h
+#w_call_center.o: r_params.h scaling.h columns.h tables.h misc.h
+#w_call_center.o: build_support.h print.h tdefs.h tdef_functions.h nulls.h
+#w_call_center.o: scd.h
+#w_catalog_page.o: config.h porting.h constants.h w_catalog_page.h date.h
+#w_catalog_page.o: mathops.h decimal.h genrand.h dist.h address.h
+#w_catalog_page.o: build_support.h columns.h pricing.h misc.h print.h tables.h
+#w_catalog_page.o: scaling.h nulls.h tdefs.h tdef_functions.h
+#w_catalog_returns.o: config.h porting.h genrand.h decimal.h mathops.h date.h
+#w_catalog_returns.o: dist.h address.h constants.h w_catalog_returns.h
+#w_catalog_returns.o: pricing.h w_catalog_sales.h print.h columns.h
+#w_catalog_returns.o: build_support.h tables.h nulls.h tdefs.h
+#w_catalog_returns.o: tdef_functions.h parallel.h
+#w_catalog_sales.o: config.h porting.h w_catalog_sales.h pricing.h decimal.h
+#w_catalog_sales.o: mathops.h w_catalog_returns.h date.h genrand.h dist.h
+#w_catalog_sales.o: address.h constants.h columns.h tables.h build_support.h
+#w_catalog_sales.o: print.h nulls.h tdefs.h tdef_functions.h scaling.h
+#w_catalog_sales.o: permute.h params.h r_params.h release.h parallel.h scd.h
+#w_customer_address.o: config.h porting.h w_customer_address.h constants.h
+#w_customer_address.o: address.h date.h mathops.h decimal.h genrand.h dist.h
+#w_customer_address.o: columns.h build_support.h pricing.h print.h tables.h
+#w_customer_address.o: nulls.h tdefs.h tdef_functions.h
+#w_customer.o: config.h porting.h constants.h columns.h w_customer.h genrand.h
+#w_customer.o: decimal.h mathops.h date.h dist.h address.h build_support.h
+#w_customer.o: pricing.h tables.h print.h nulls.h tdefs.h tdef_functions.h
+#w_customer_demographics.o: config.h porting.h w_customer_demographics.h
+#w_customer_demographics.o: genrand.h decimal.h mathops.h date.h dist.h
+#w_customer_demographics.o: address.h constants.h columns.h build_support.h
+#w_customer_demographics.o: pricing.h tables.h print.h nulls.h tdefs.h
+#w_customer_demographics.o: tdef_functions.h sparse.h
+#w_datetbl.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#w_datetbl.o: address.h constants.h w_datetbl.h print.h columns.h
+#w_datetbl.o: build_support.h pricing.h tables.h nulls.h tdefs.h
+#w_datetbl.o: tdef_functions.h
+#w_household_demographics.o: config.h porting.h genrand.h decimal.h mathops.h
+#w_household_demographics.o: date.h dist.h address.h constants.h
+#w_household_demographics.o: w_household_demographics.h print.h columns.h
+#w_household_demographics.o: build_support.h pricing.h tables.h nulls.h
+#w_household_demographics.o: tdefs.h tdef_functions.h sparse.h
+#w_income_band.o: config.h porting.h genrand.h decimal.h mathops.h date.h
+#w_income_band.o: dist.h address.h constants.h w_income_band.h print.h
+#w_income_band.o: columns.h build_support.h pricing.h tables.h nulls.h tdefs.h
+#w_income_band.o: tdef_functions.h
+#w_inventory.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#w_inventory.o: address.h constants.h w_inventory.h print.h columns.h
+#w_inventory.o: build_support.h pricing.h tables.h scaling.h nulls.h tdefs.h
+#w_inventory.o: tdef_functions.h scd.h
+#w_item.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#w_item.o: address.h constants.h w_item.h print.h columns.h build_support.h
+#w_item.o: pricing.h tables.h misc.h nulls.h tdefs.h tdef_functions.h scd.h
+#w_promotion.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#w_promotion.o: address.h constants.h w_promotion.h print.h columns.h
+#w_promotion.o: build_support.h pricing.h tables.h misc.h nulls.h tdefs.h
+#w_promotion.o: tdef_functions.h
+#w_reason.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#w_reason.o: address.h constants.h w_reason.h print.h columns.h
+#w_reason.o: build_support.h pricing.h tables.h nulls.h tdefs.h
+#w_reason.o: tdef_functions.h
+#w_ship_mode.o: config.h porting.h genrand.h decimal.h mathops.h date.h dist.h
+#w_ship_mode.o: address.h constants.h w_ship_mode.h print.h columns.h
+#w_ship_mode.o: build_support.h pricing.h tables.h nulls.h tdefs.h
+#w_ship_mode.o: tdef_functions.h
+#w_store.o: config.h porting.h constants.h w_store.h address.h decimal.h
+#w_store.o: mathops.h date.h genrand.h dist.h build_support.h columns.h
+#w_store.o: pricing.h misc.h print.h tables.h scaling.h nulls.h tdefs.h
+#w_store.o: tdef_functions.h scd.h
+#w_store_returns.o: config.h porting.h w_store_returns.h pricing.h decimal.h
+#w_store_returns.o: mathops.h w_store_sales.h constants.h tables.h print.h
+#w_store_returns.o: columns.h genrand.h date.h dist.h address.h
+#w_store_returns.o: build_support.h nulls.h tdefs.h tdef_functions.h
 w_store_sales.o: config.h porting.h decimal.h mathops.h w_store_sales.h
 w_store_sales.o: constants.h pricing.h w_store_returns.h genrand.h date.h
 w_store_sales.o: dist.h address.h columns.h build_support.h tables.h print.h
 w_store_sales.o: nulls.h tdefs.h tdef_functions.h scaling.h permute.h scd.h
 w_store_sales.o: parallel.h
-w_timetbl.o: config.h porting.h constants.h w_timetbl.h date.h mathops.h
-w_timetbl.o: decimal.h genrand.h dist.h address.h build_support.h columns.h
-w_timetbl.o: pricing.h misc.h print.h tables.h nulls.h tdefs.h
-w_timetbl.o: tdef_functions.h
-w_warehouse.o: config.h porting.h constants.h w_warehouse.h address.h date.h
-w_warehouse.o: mathops.h decimal.h genrand.h dist.h build_support.h columns.h
-w_warehouse.o: pricing.h misc.h print.h tables.h nulls.h tdefs.h
-w_warehouse.o: tdef_functions.h
-w_web_page.o: config.h porting.h constants.h w_web_page.h date.h mathops.h
-w_web_page.o: decimal.h genrand.h dist.h address.h build_support.h columns.h
-w_web_page.o: pricing.h misc.h print.h scaling.h tables.h nulls.h tdefs.h
-w_web_page.o: tdef_functions.h scd.h
-w_web_returns.o: config.h porting.h pricing.h decimal.h mathops.h
-w_web_returns.o: w_web_returns.h w_web_sales.h date.h genrand.h dist.h
-w_web_returns.o: address.h constants.h build_support.h columns.h misc.h
-w_web_returns.o: print.h error_msg.h tables.h nulls.h tdefs.h
-w_web_returns.o: tdef_functions.h
-w_web_sales.o: config.h porting.h pricing.h decimal.h mathops.h w_web_sales.h
-w_web_sales.o: w_web_returns.h date.h genrand.h dist.h address.h constants.h
-w_web_sales.o: build_support.h columns.h misc.h print.h tables.h nulls.h
-w_web_sales.o: tdefs.h tdef_functions.h scaling.h permute.h scd.h parallel.h
-w_web_site.o: config.h porting.h constants.h address.h w_web_site.h decimal.h
-w_web_site.o: mathops.h genrand.h date.h dist.h tables.h columns.h print.h
-w_web_site.o: scaling.h build_support.h pricing.h misc.h nulls.h tdefs.h
-w_web_site.o: tdef_functions.h scd.h
+#w_timetbl.o: config.h porting.h constants.h w_timetbl.h date.h mathops.h
+#w_timetbl.o: decimal.h genrand.h dist.h address.h build_support.h columns.h
+#w_timetbl.o: pricing.h misc.h print.h tables.h nulls.h tdefs.h
+#w_timetbl.o: tdef_functions.h
+#w_warehouse.o: config.h porting.h constants.h w_warehouse.h address.h date.h
+#w_warehouse.o: mathops.h decimal.h genrand.h dist.h build_support.h columns.h
+#w_warehouse.o: pricing.h misc.h print.h tables.h nulls.h tdefs.h
+#w_warehouse.o: tdef_functions.h
+#w_web_page.o: config.h porting.h constants.h w_web_page.h date.h mathops.h
+#w_web_page.o: decimal.h genrand.h dist.h address.h build_support.h columns.h
+#w_web_page.o: pricing.h misc.h print.h scaling.h tables.h nulls.h tdefs.h
+#w_web_page.o: tdef_functions.h scd.h
+#w_web_returns.o: config.h porting.h pricing.h decimal.h mathops.h
+#w_web_returns.o: w_web_returns.h w_web_sales.h date.h genrand.h dist.h
+#w_web_returns.o: address.h constants.h build_support.h columns.h misc.h
+#w_web_returns.o: print.h error_msg.h tables.h nulls.h tdefs.h
+#w_web_returns.o: tdef_functions.h
+#w_web_sales.o: config.h porting.h pricing.h decimal.h mathops.h w_web_sales.h
+#w_web_sales.o: w_web_returns.h date.h genrand.h dist.h address.h constants.h
+#w_web_sales.o: build_support.h columns.h misc.h print.h tables.h nulls.h
+#w_web_sales.o: tdefs.h tdef_functions.h scaling.h permute.h scd.h parallel.h
+#w_web_site.o: config.h porting.h constants.h address.h w_web_site.h decimal.h
+#w_web_site.o: mathops.h genrand.h date.h dist.h tables.h columns.h print.h
+#w_web_site.o: scaling.h build_support.h pricing.h misc.h nulls.h tdefs.h
+#w_web_site.o: tdef_functions.h scd.h
 dbgen_version.o: config.h porting.h dbgen_version.h print.h columns.h
 dbgen_version.o: build_support.h decimal.h mathops.h date.h dist.h pricing.h
 dbgen_version.o: tables.h misc.h release.h
