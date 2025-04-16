@@ -130,14 +130,15 @@ S_HDR = s_brand.h s_customer_address.h scaling.h s_call_center.h s_catalog.h \
 	s_subclass.h s_warehouse.h s_web_order.h \
 	s_web_order_lineitem.h s_web_page.h s_web_promotional_item.h \
 	s_web_returns.h s_web_site.h s_tdefs.h s_zip_to_gmt.h
-W_HDR = w_call_center.h w_catalog_page.h w_catalog_returns.h \
-	w_catalog_sales.h w_customer_address.h w_customer_demographics.h \
-	w_customer.h w_datetbl.h w_household_demographics.h w_income_band.h \
-	w_inventory.h w_item.h \
-	w_promotion.h w_reason.h w_ship_mode.h \
-	w_store.h w_store_returns.h w_store_sales.h w_tdefs.h w_timetbl.h \
-	w_warehouse.h w_web_page.h w_web_returns.h w_web_sales.h w_web_site.h \
-	dbgen_version.h
+W_HDR = w_store_sales.h w_inventory.h
+	#w_call_center.h w_catalog_page.h w_catalog_returns.h \
+	#w_catalog_sales.h w_customer_address.h w_customer_demographics.h \
+	#w_customer.h w_datetbl.h w_household_demographics.h w_income_band.h \
+	#w_inventory.h w_item.h \
+	#w_promotion.h w_reason.h w_ship_mode.h \
+	#w_store.h w_store_returns.h w_store_sales.h w_tdefs.h w_timetbl.h \
+	#w_warehouse.h w_web_page.h w_web_returns.h w_web_sales.h w_web_site.h \
+	#dbgen_version.h
 HDR = $(COMMON_HDR) $(DISTCOMP_HDR) $(QGEN_HDR) $(S_HDR) $(W_HDR)
 #
 COMMON_SRC = address.c build_support.c date.c \
@@ -159,13 +160,14 @@ S_SRC = s_brand.c s_customer_address.c scaling.c s_call_center.c s_catalog.c \
 	s_subclass.c s_warehouse.c s_web_order.c s_web_order_lineitem.c \
 	s_web_page.c s_web_promotinal_item.c s_web_returns.c s_web_site.c \
 	s_zip_to_gmt.c
-W_SRC = w_call_center.c w_catalog_page.c w_catalog_returns.c w_catalog_sales.c \
-	w_customer_address.c w_customer.c w_customer_demographics.c  \
-	w_datetbl.c w_household_demographics.c w_income_band.c w_inventory.c \
-	w_item.c \
-	w_promotion.c w_reason.c w_ship_mode.c w_store.c w_store_returns.c \
-	w_store_sales.c w_timetbl.c w_warehouse.c w_web_page.c w_web_returns.c \
-	w_web_sales.c w_web_site.c dbgen_version.c
+W_SRC = w_store_sales.c w_inventory.c
+	#w_call_center.c w_catalog_page.c w_catalog_returns.c w_catalog_sales.c \
+	#w_customer_address.c w_customer.c w_customer_demographics.c  \
+	#w_datetbl.c w_household_demographics.c w_income_band.c w_inventory.c \
+	#w_item.c \
+	#w_promotion.c w_reason.c w_ship_mode.c w_store.c w_store_returns.c \
+	#w_store_sales.c w_timetbl.c w_warehouse.c w_web_page.c w_web_returns.c \
+	#w_web_sales.c w_web_site.c dbgen_version.c
 SRC = $(COMMON_SRC) $(DISTCOMP_SRC) $(S_SRC) $(W_SRC) $(QGEN_SRC) mkheader.c checksum.c
 #
 DBGEN_OBJ = address.o build_support.o date.o \
