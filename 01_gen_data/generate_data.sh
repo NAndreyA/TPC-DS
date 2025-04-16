@@ -24,7 +24,7 @@ rm -f $DATA_DIRECTORY/*
 
 #for single nodes, you might only have a single segment but dsdgen requires at least 2
 if [ "$PARALLEL" -eq "1" ]; then
-	PARALLEL="2"
+	PARALLEL="4"
 	SINGLE_SEGMENT="1"
 fi
 
