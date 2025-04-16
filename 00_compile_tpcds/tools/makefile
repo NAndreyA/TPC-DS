@@ -189,13 +189,13 @@ S_OBJ = s_brand.o s_customer_address.o s_call_center.o s_catalog.o \
 	s_subclass.o s_warehouse.o s_web_order.o s_web_order_lineitem.o \
 	s_web_page.o s_web_promotinal_item.o s_web_returns.o s_web_site.o \
 	s_zip_to_gmt.o
-W_OBJ = #w_call_center.o w_catalog_page.o w_catalog_returns.o w_catalog_sales.o \
+W_OBJ = w_store_sales.o
+	#w_call_center.o w_catalog_page.o w_catalog_returns.o w_catalog_sales.o \
 	#w_customer_address.o w_customer.o w_customer_demographics.o  \
 	#w_datetbl.o w_household_demographics.o w_income_band.o w_inventory.o \
 	#w_item.o \
 	#w_promotion.o w_reason.o w_ship_mode.o w_store.o w_store_returns.o \
-	w_store_sales.o 
-	#w_timetbl.o w_warehouse.o w_web_page.o w_web_returns.o \
+	#w_store_sales.o w_timetbl.o w_warehouse.o w_web_page.o w_web_returns.o \
 	#w_web_sales.o w_web_site.o dbgen_version.o
 #
 OBJ1 =	$(S_OBJ) $(W_OBJ) $(DBGEN_OBJ)
