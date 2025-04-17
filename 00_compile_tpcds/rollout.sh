@@ -14,6 +14,7 @@ table_name="compile"
 make_tpc()
 {
 	#compile the tools
+ 	echo "make_tpc"
 	cd $PWD/tools
 	rm -f *.o
 	make
@@ -22,6 +23,7 @@ make_tpc()
 
 copy_tpc()
 {
+	echo "copy_tpc"
 	cp $PWD/tools/dsqgen ../*_gen_data/
 	cp $PWD/tools/dsqgen ../*_multi_user/
 	cp $PWD/tools/tpcds.idx ../*_gen_data/
@@ -36,6 +38,7 @@ copy_tpc()
 
 copy_queries()
 {
+	echo "copy_tpc"
 	rm -rf $PWD/../*_gen_data/query_templates
 	rm -rf $PWD/../*_multi_user/query_templates
 	cp -R query_templates $PWD/../*_gen_data/
