@@ -17,8 +17,12 @@ set_segment_bashrc()
 	echo "if [ -f /etc/bashrc ]; then" > $PWD/segment_bashrc
 	echo "	. /etc/bashrc" >> $PWD/segment_bashrc
 	echo "fi" >> $PWD/segment_bashrc
-	echo "source /usr/local/greenplum-db/greenplum_path.sh" >> $PWD/segment_bashrc
-	echo "export LD_PRELOAD=/lib64/libz.so.1 ps" >> $PWD/segment_bashrc
+ 	#Path LIB for OS RedHat, Linux, RedOS
+	#echo "source /usr/local/greenplum-db/greenplum_path.sh" >> $PWD/segment_bashrc
+	#echo "export LD_PRELOAD=/lib64/libz.so.1 ps" >> $PWD/segment_bashrc
+ 	#Path LIB for OS Astra Linux
+ 	echo "source /usr/lib/gpdb/greenplum_path.sh" >> $PWD/segment_bashrc
+  	echo "export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps" >> $PWD/segment_bashrc
 	chmod 755 $PWD/segment_bashrc
 
 	#copy generate_data.sh to ~/
