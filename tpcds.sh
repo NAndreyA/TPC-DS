@@ -125,7 +125,7 @@ check_variables()
  	#10
 	local count=$(grep "RUN_OS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_OS=\"Astra Linux\"" >> $MYVAR
+		echo "RUN_OS=\"RED OS\"" >> $MYVAR
   		#echo "*OS: RED OS, Astra Linux, ALT SP Server" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
