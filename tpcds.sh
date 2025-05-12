@@ -302,6 +302,7 @@ echo_variables()
 
 check_user
 check_variables
+check_os
 yum_installs
 repo_init
 script_check
