@@ -126,7 +126,7 @@ check_variables()
 	local count=$(grep "RUN_OS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "RUN_OS=\"null\"" >> $MYVAR
-  		echo "OS: RED OS, Astra Linux, ALT SP Server" >> $MYVAR
+  		echo "*OS: RED OS, Astra Linux, ALT SP Server" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 
@@ -155,19 +155,19 @@ check_user()
 	fi
 }
 
-#check_os()
-#{
-#	### Check OS ###
-#	echo "############################################################################"
-#	echo "Check OS"
-#	echo "############################################################################"
-#	echo ""
-#	local OS=`sh /etc/os-release; echo "$NAME"`
-#	if [ "$WHOAMI" != "root" ]; then
-#		echo "Script must be executed as root!"
-#		exit 1
-#	fi
-#}
+check_os()
+{
+	### Check OS ###
+	echo "############################################################################"
+	echo "Check OS"
+	echo "############################################################################"
+	echo ""
+	local OS=`. /etc/os-release; echo "$NAME"`
+	if [ "$WHOAMI" != "$RUN_OS" ]; then
+		echo "OS must be $RUN_OS!"
+		exit 1
+	fi
+}
 
 yum_installs()
 {
