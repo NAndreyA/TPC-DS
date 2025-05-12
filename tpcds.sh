@@ -162,8 +162,8 @@ check_os()
 	echo "Check OS"
 	echo "############################################################################"
 	echo ""
-	local OS=`. /etc/os-release; echo "$NAME"`
-	if [ "$WHOAMI" != "$RUN_OS" ]; then
+	local NAMEOS=`. /etc/os-release; echo "$NAME"`
+	if [ "$NAMEOS" != "$RUN_OS" ]; then
 		echo "OS must be $RUN_OS!"
 		exit 1
 	fi
