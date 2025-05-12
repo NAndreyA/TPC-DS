@@ -155,20 +155,20 @@ check_user()
 	fi
 }
 
-#check_os()
-#{
-#	### Check OS ###
-#	echo "############################################################################"
-#	echo "Check OS"
-#	echo "############################################################################"
-#	echo ""
-#	local NAMEOS=`. /etc/os-release; echo "$NAME"`
-#	if [ "$NAMEOS" != "$RUN_OS" ]; then
-#		echo "CURRENT OS = "$NAMEOS"!!!"
-# 		echo "EDIT VARIABLE RUN_OS="$NAMEOS"
-#		exit 1
-#	fi
-#}
+check_os()
+{
+	### Check OS ###
+	echo "############################################################################"
+	echo "Check OS"
+	echo "############################################################################"
+	echo ""
+	local NAMEOS=`. /etc/os-release; echo "$NAME"`
+	if [ "$NAMEOS" != "$RUN_OS" ]; then
+		echo "CURRENT OS = "$NAMEOS"!!!"
+ 		#echo "EDIT VARIABLE RUN_OS="$NAMEOS"
+		exit 1
+	fi
+}
 
 yum_installs()
 {
