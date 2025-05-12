@@ -122,6 +122,13 @@ check_variables()
 		echo "RUN_SCORE=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
+ 	#10
+	local count=$(grep "RUN_OS" $MYVAR | wc -l)
+	if [ "$count" -eq "0" ]; then
+		echo "RUN_OS=\"null\"" >> $MYVAR
+  		echo "OS: RED OS, Astra Linux, ALT SP Server" >> $MYVAR
+		new_variable=$(($new_variable + 1))
+	fi
 
 	if [ "$new_variable" -gt "0" ]; then
 		echo "There are new variables in the tpcds_variables.sh file.  Please review to ensure the values are correct and then re-run this script."
@@ -147,6 +154,20 @@ check_user()
 		exit 1
 	fi
 }
+
+#check_os()
+#{
+#	### Check OS ###
+#	echo "############################################################################"
+#	echo "Check OS"
+#	echo "############################################################################"
+#	echo ""
+#	local OS=`sh /etc/os-release; echo "$NAME"`
+#	if [ "$WHOAMI" != "root" ]; then
+#		echo "Script must be executed as root!"
+#		exit 1
+#	fi
+#}
 
 yum_installs()
 {
