@@ -165,7 +165,7 @@ check_os()
 	local NAMEOS=`. /etc/os-release; echo "$NAME"`
 	if [ "$NAMEOS" != "$RUN_OS" ]; then
 		echo "CURRENT OS = "$NAMEOS"!!!"
- 		echo "EDIT tpcds_variables.sh, RUN_OS="$NAMEOS""
+ 		echo "EDIT tpcds_variables.sh, RUN_OS=""$NAMEOS"""
 		exit 1
 	fi
 }
