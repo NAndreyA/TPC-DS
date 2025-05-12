@@ -54,7 +54,7 @@ check_variables()
 	fi
 	local count=$(grep "GEN_DATA_SCALE" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "GEN_DATA_SCALE=\"1000\"" >> $MYVAR
+		echo "GEN_DATA_SCALE=\"1\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	local count=$(grep "SINGLE_USER_ITERATIONS" $MYVAR | wc -l)
@@ -126,7 +126,7 @@ check_variables()
 	local count=$(grep "RUN_OS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "RUN_OS=\"null\"" >> $MYVAR
-  		echo "*OS: RED OS, Astra Linux, ALT SP Server" >> $MYVAR
+  		echo "*OS: RED OS, Astra Linux, ALT SP Server"
 		new_variable=$(($new_variable + 1))
 	fi
 
