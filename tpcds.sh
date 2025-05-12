@@ -49,17 +49,17 @@ check_variables()
 	fi
 	local count=$(grep "MULTI_USER_COUNT" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "MULTI_USER_COUNT=\"5\"" >> $MYVAR
+		echo "MULTI_USER_COUNT=\"0\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	local count=$(grep "GEN_DATA_SCALE" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "GEN_DATA_SCALE=\"3000\"" >> $MYVAR
+		echo "GEN_DATA_SCALE=\"1000\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	local count=$(grep "SINGLE_USER_ITERATIONS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "SINGLE_USER_ITERATIONS=\"1\"" >> $MYVAR
+		echo "SINGLE_USER_ITERATIONS=\"0\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#00
@@ -71,7 +71,7 @@ check_variables()
 	#01
 	local count=$(grep "RUN_GEN_DATA" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_GEN_DATA=\"false\"" >> $MYVAR
+		echo "RUN_GEN_DATA=\"true\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#02
@@ -95,31 +95,31 @@ check_variables()
 	#05
 	local count=$(grep "RUN_SQL" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_SQL=\"true\"" >> $MYVAR
+		echo "RUN_SQL=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#06
 	local count=$(grep "RUN_SINGLE_USER_REPORT" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_SINGLE_USER_REPORT=\"true\"" >> $MYVAR
+		echo "RUN_SINGLE_USER_REPORT=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#07
 	local count=$(grep "RUN_MULTI_USER" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_MULTI_USER=\"true\"" >> $MYVAR
+		echo "RUN_MULTI_USER=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#08
 	local count=$(grep "RUN_MULTI_USER_REPORT" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_MULTI_USER_REPORT=\"true\"" >> $MYVAR
+		echo "RUN_MULTI_USER_REPORT=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#09
 	local count=$(grep "RUN_SCORE" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_SCORE=\"true\"" >> $MYVAR
+		echo "RUN_SCORE=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 
