@@ -83,13 +83,13 @@ check_variables()
 	#03
 	local count=$(grep "RUN_DDL" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_DDL=\"true\"" >> $MYVAR
+		echo "RUN_DDL=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#04
 	local count=$(grep "RUN_LOAD" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_LOAD=\"true\"" >> $MYVAR
+		echo "RUN_LOAD=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#05
@@ -163,8 +163,9 @@ check_os()
 	echo "############################################################################"
 	echo ""
 	local NAMEOS=`. /etc/os-release; echo "$NAME"`
-	if [ "$NAMEOS" != $RUN_OS ]; then
-		echo "OS must be $RUN_OS!"
+	if [ "$NAMEOS" != "$RUN_OS" ]; then
+		echo "CURRENT OS = "$NAMEOS"!!!"
+  		echo "EDIT VARIABLE RUN_OS="$NAMEOS"
 		exit 1
 	fi
 }
