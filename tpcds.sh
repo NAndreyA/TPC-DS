@@ -77,7 +77,7 @@ check_variables()
 	#02
 	local count=$(grep "RUN_INIT" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_INIT=\"true\"" >> $MYVAR
+		echo "RUN_INIT=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#03
@@ -163,7 +163,7 @@ check_os()
 	echo "############################################################################"
 	echo ""
 	local NAMEOS=`. /etc/os-release; echo "$NAME"`
-	if [ "$NAMEOS" != "$RUN_OS" ]; then
+	if [ "$NAMEOS" != $RUN_OS ]; then
 		echo "OS must be $RUN_OS!"
 		exit 1
 	fi
