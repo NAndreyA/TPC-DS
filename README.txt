@@ -1,4 +1,46 @@
 ########################################################################################
+Изменения для применения TPCDS на ОС Астра
+########################################################################################
+Скрипт - functions.sh
+    #Path LIB for OS RedHat, Linux, RedOS
+        export LD_PRELOAD=/lib64/libz.so.1 ps
+
+    #Path LIB for OS Astra Linux
+        export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps
+
+Скрипт - 02_unit/rollout.sh
+    строки с 20 по 25
+     	#Path SH for OS RedHat, Linux, RedOS
+    	#echo "source /usr/local/greenplum-db/greenplum_path.sh" >> $PWD/segment_bashrc
+    	#echo "export LD_PRELOAD=/lib64/libz.so.1 ps" >> $PWD/segment_bashrc
+     	#Path LIB for OS Astra Linux
+     	echo "source /usr/lib/gpdb/greenplum_path.sh" >> $PWD/segment_bashrc
+      	echo "export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps" >> $PWD/segment_bashrc
+    строки 41-42
+    	#ssh $ext_host "echo \"source $GREENPLUM_PATH\" >> ~/.bashrc"
+        ssh $ext_host "echo \"source /usr/local/gpdb/greenplum_path.sh\" >> ~/.bashrc"
+    строки 47-50
+        #Path SH for OS RedHat, Linux, RedOS
+    	#ssh $ext_host "echo \"export LD_PRELOAD=/lib64/libz.so.1 ps\" >> ~/.bashrc"
+        #Path LIB for OS Astra Linux
+    	ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
+
+Скрипт - 04_load/rollout.sh
+    строки с 35 по 38
+		#OS REDos, Linux (ORIGINAL)
+  		#ssh -n -f $i "bash -c 'cd ~/; ./stop_gpfdist.sh'"
+  		#OS Astra
+        ssh -n -f $i "bash -l -c 'cd ~/; ./stop_gpfdist.sh'"
+    строки с 54 по 57
+	    #ssh -n -f $EXT_HOST "bash -c 'cd ~/; ./start_gpfdist.sh $PORT $GEN_DATA_PATH'"
+   		#OS Astra
+      	ssh -n -f $EXT_HOST "bash -l -c 'cd ~/; ./start_gpfdist.sh $PORT $GEN_DATA_PATH'"
+    строки с 68 по 71
+   		#OS REDos, Linux (ORIGINAL)
+		#ssh -n -f $EXT_HOST "bash -c 'cd ~/; ./start_gpfdist.sh $PORT $GEN_DATA_PATH'"
+  		#OS Astra
+     	ssh -n -f $EXT_HOST "bash -l -c 'cd ~/; ./start_gpfdist.sh $PORT $GEN_DATA_PATH'"
+########################################################################################
 TPC-DS benchmark scripts for Greenplum database.
 ########################################################################################
 Supported versions:
