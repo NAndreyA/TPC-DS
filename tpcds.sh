@@ -71,7 +71,7 @@ check_variables()
 	#01
 	local count=$(grep "RUN_GEN_DATA" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_GEN_DATA=\"true\"" >> $MYVAR
+		echo "RUN_GEN_DATA=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#02
