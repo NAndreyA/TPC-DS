@@ -90,9 +90,6 @@ fi
 if [ "$RUN_SCORE" == "true" ]; then
 	rm -f $PWD/log/end_score.log
 fi
-if [ "$RUN_OS" == "true" ]; then
-	rm -f $PWD/log/end_os.log
-fi
 
 for i in $(ls -d $PWD/0*); do
 	echo "$i/rollout.sh"
