@@ -37,17 +37,26 @@ set_segment_bashrc()
 			else
 				count=$(ssh $ext_host "grep greenplum_path ~/.bashrc" 2> /dev/null | wc -l)
 				if [ "$count" -eq "0" ]; then
-					echo "Adding greenplum_path to $ext_host .bashrc"
+					echo "!!!  Adding greenplum_path to $ext_host .bashrc"
 					#ssh $ext_host "echo \"source $GREENPLUM_PATH\" >> ~/.bashrc"
      					ssh $ext_host "echo \"source /usr/local/gpdb/greenplum_path.sh\" >> ~/.bashrc"
 				fi
 				count=$(ssh $ext_host "grep LD_PRELOAD ~/.bashrc" 2> /dev/null | wc -l)
 				if [ "$count" -eq "0" ]; then
-					echo "Adding LD_PRELOAD to $ext_host .bashrc"
+    					echo "Adding LD_PRELOAD to $ext_host .bashrc"
+    					OS=$16
+					if [ "$OS" != "Astra Linux" ]; then
+						echo "Path LIB for OS RedHat, Linux, RedOS"
+      						ssh $ext_host "echo \"export LD_PRELOAD=/lib64/libz.so.1 ps\" >> ~/.bashrc"
+					else
+						echo "Path LIB for OS Astra Linux"
+						ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
+					fi
+					#ORIG#echo "Adding LD_PRELOAD to $ext_host .bashrc"
      					#Path SH for OS RedHat, Linux, RedOS
-					#ssh $ext_host "echo \"export LD_PRELOAD=/lib64/libz.so.1 ps\" >> ~/.bashrc"
+					#ORIG#ssh $ext_host "echo \"export LD_PRELOAD=/lib64/libz.so.1 ps\" >> ~/.bashrc"
      					#Path LIB for OS Astra Linux
-	  				ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
+	  				#ORIG#ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
 				fi
 			fi
 		fi
