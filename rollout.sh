@@ -57,6 +57,7 @@ echo "SINGLE_USER_ITERATIONS: $SINGLE_USER_ITERATIONS"
 echo "RUN_SINGLE_USER_REPORT: $RUN_SINGLE_USER_REPORT"
 echo "RUN_MULTI_USER: $RUN_MULTI_USER"
 echo "RUN_MULTI_USER_REPORT: $RUN_MULTI_USER_REPORT"
+echo "RUN_OS: $RUN_OS"
 echo "############################################################################"
 echo ""
 if [ "$RUN_COMPILE_TPCDS" == "true" ]; then
@@ -88,6 +89,9 @@ if [ "$RUN_MULTI_USER_REPORT" == "true" ]; then
 fi
 if [ "$RUN_SCORE" == "true" ]; then
 	rm -f $PWD/log/end_score.log
+fi
+if [ "$RUN_OS" == "true" ]; then
+	rm -f $PWD/log/end_os.log
 fi
 
 for i in $(ls -d $PWD/0*); do
