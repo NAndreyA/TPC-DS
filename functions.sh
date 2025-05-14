@@ -29,6 +29,13 @@ ADMIN_USER=`whoami`
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 MASTER_HOST=$(hostname -s)
 
+RUN_DDL=$8
+RUN_OS=$16
+RUN_COMPRESS=$17
+LEVEL_COMPRESS=$18
+
+echo "$RUN_COMPRESS and $LEVEL_COMPRESS and $RUN_DDL and $RUN_OS"
+
 get_gpfdist_port()
 {
 	all_ports=$(psql -t -A -c "select min(case when role = 'p' then port else 999999 end), min(case when role = 'm' then port else 999999 end) from gp_segment_configuration where content >= 0")
