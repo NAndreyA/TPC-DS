@@ -71,13 +71,13 @@ check_variables()
 	#01
 	local count=$(grep "RUN_GEN_DATA" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_GEN_DATA=\"true\"" >> $MYVAR
+		echo "RUN_GEN_DATA=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#02
 	local count=$(grep "RUN_INIT" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_INIT=\"true\"" >> $MYVAR
+		echo "RUN_INIT=\"false\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#03
@@ -320,4 +320,4 @@ repo_init
 script_check
 echo_variables
 
-su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS"
+su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $RUN_COMPRESS $LEVEL_COMPRESS"
