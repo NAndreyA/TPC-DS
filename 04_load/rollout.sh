@@ -5,6 +5,10 @@ PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/../functions.sh
 source_bashrc
 
+RUN_OS=$16
+RUN_COMPRESS=$17
+LEVEL_COMPRESS=$18
+
 echo "$RUN_COMPRESS and $LEVEL_COMPRESS and $RUN_DDL and $RUN_OS"
 
 step=load
