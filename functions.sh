@@ -69,14 +69,14 @@ get_version()
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
 			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-   			SMALL_STORAGE="appendonly=true, orientation=row, compresstype="$RUN_COMPRESS", compresslevel="$LEVEL_COMPRESS""
-			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype="$RUN_COMPRESS", compresslevel="$LEVEL_COMPRESS""
-	 		LARGE_STORAGE="appendonly=true, orientation=column, compresstype="$RUN_COMPRESS", compresslevel="$LEVEL_COMPRESS""
+   			SMALL_STORAGE="appendonly=true, orientation=column, compresstype=\"$RUN_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=\"$RUN_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+	 		LARGE_STORAGE="appendonly=true, orientation=column, compresstype=\"$RUN_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
 		else
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
 			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			SMALL_STORAGE="appendonly=true, orientation=row"
+			SMALL_STORAGE="appendonly=true, orientation=column"
 			MEDIUM_STORAGE="appendonly=true, orientation=column"
 	 		LARGE_STORAGE="appendonly=true, orientation=column"
 		fi
