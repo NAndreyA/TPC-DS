@@ -64,20 +64,20 @@ get_version()
 	#need to call source_bashrc first
 	VERSION=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT CASE WHEN POSITION ('Greenplum Database 4.3' IN version) > 0 THEN 'gpdb_4_3' WHEN POSITION ('Greenplum Database 5' IN version) > 0 THEN 'gpdb_5' WHEN POSITION ('Greenplum Database 6' IN version) > 0 THEN 'gpdb_6' ELSE 'postgresql' END FROM version();") 
 	if [[ "$VERSION" == *"gpdb"* ]]; then
-		quicklz_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = 'quicklz'")
-		if [ "$quicklz_test" -eq "1" ]; then
+		compress_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = '$RUN_COMPRESS'")
+		if [ "$compress_test" -eq "1" ]; then
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
 			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-   			SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
-	 		LARGE_STORAGE="appendonly=true, orientation=column"
+   			SMALL_STORAGE="appendonly=true, orientation=row, compresstype=$RUN_COMPRESS, compresslevel=$LEVEL_COMPRESS"
+			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=$RUN_COMPRESS, compresslevel=$LEVEL_COMPRESS"
+	 		LARGE_STORAGE="appendonly=true, orientation=column, compresstype=$RUN_COMPRESS, compresslevel=$LEVEL_COMPRESS"
 		else
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
 			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
+			SMALL_STORAGE="appendonly=true, orientation=row"
+			MEDIUM_STORAGE="appendonly=true, orientation=column"
 	 		LARGE_STORAGE="appendonly=true, orientation=column"
 		fi
 	else
