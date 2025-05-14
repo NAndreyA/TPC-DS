@@ -5,6 +5,8 @@ PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/../functions.sh
 source_bashrc
 
+echo "$RUN_COMPRESS and $LEVEL_COMPRESS"
+
 step=load
 init_log $step
 
