@@ -9,19 +9,6 @@ count=$(alias | grep -w ls | wc -l)
 if [ "$count" -gt "0" ]; then
 	unalias ls
 fi
-#OS=$16
-#if [ "$OS" != "Astra Linux" ]; then
-#	echo "Path LIB for OS RedHat, Linux, RedOS"
-#	export LD_PRELOAD=/lib64/libz.so.1 ps
-#else
-#	echo "Path LIB for OS Astra Linux"
-#	export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps
-#fi
-#Path LIB for OS RedHat, Linux, RedOS
-#export LD_PRELOAD=/lib64/libz.so.1 ps
-
-#Path LIB for OS Astra Linux
-#export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps
 
 LOCAL_PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 OSVERSION=`uname`
