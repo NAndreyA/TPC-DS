@@ -2,6 +2,13 @@
 set -e
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+RUN_DDL=$8
+RUN_OS=$16
+RUN_COMPRESS=$17
+LEVEL_COMPRESS=$18
+
+echo "$RUN_COMPRESS and $LEVEL_COMPRESS and $RUN_DDL and $RUN_OS"
+
 source $PWD/../functions.sh
 source_bashrc
 
