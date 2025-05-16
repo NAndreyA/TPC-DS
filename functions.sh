@@ -16,7 +16,7 @@ ADMIN_USER=`whoami`
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 MASTER_HOST=$(hostname -s)
 
-echo "RUN functions.sh and $RUN_COMPRESS"
+echo "RUN functions.sh and $17"
 
 get_gpfdist_port()
 {
