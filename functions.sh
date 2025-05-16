@@ -3,7 +3,6 @@ set -e
 
 #PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 #source $PWD/../tpcds_variables.sh
-source $MYVAR
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
@@ -22,7 +21,7 @@ MASTER_HOST=$(hostname -s)
 
 RUN_COMPRESS=$RUN_COMPRESS
 LEVEL_COMPRESS=$LEVEL_COMPRESS
-echo "RUN TEST1_1 functions.sh and $RUN_COMPRESS and $LEVEL_COMPRESS"
+echo "RUN TEST1_2 functions.sh and $RUN_COMPRESS and $LEVEL_COMPRESS"
 
 get_gpfdist_port()
 {
