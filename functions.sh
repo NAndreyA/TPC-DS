@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../tpcds_variables.sh
+#PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+#source $PWD/../tpcds_variables.sh
+source $MYVAR
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
