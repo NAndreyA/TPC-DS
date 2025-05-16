@@ -22,7 +22,7 @@ MASTER_HOST=$(hostname -s)
 
 RUN_COMPRESS=$RUN_COMPRESS
 LEVEL_COMPRESS=$LEVEL_COMPRESS
-echo "RUN TEST functions.sh and $RUN_COMPRESS and $LEVEL_COMPRESS"
+echo "RUN TEST1_1 functions.sh and $RUN_COMPRESS and $LEVEL_COMPRESS"
 
 get_gpfdist_port()
 {
