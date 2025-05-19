@@ -37,6 +37,11 @@ check_variables()
 		echo "INSTALL_DIR=\"/repo_tpcds\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
+ 	local count=$(grep "LOCAL_DIR=" $MYVAR | wc -l)
+	if [ "$count" -eq "0" ]; then
+		echo "LOCAL_DIR=\"$PWD\"" >> $MYVAR
+		new_variable=$(($new_variable + 1))
+	fi
 	local count=$(grep "EXPLAIN_ANALYZE=" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "EXPLAIN_ANALYZE=\"false\"" >> $MYVAR
