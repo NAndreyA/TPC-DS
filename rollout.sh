@@ -2,7 +2,7 @@
 
 set -e
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/functions.sh "/tpcds"
+source $PWD/functions.sh "$LOCAL_DIR"
 source_bashrc
 
 GEN_DATA_SCALE="$1"
