@@ -1,10 +1,11 @@
 #!/bin/bash
 
 #set -e
-echo "rollout $LOCAL_DIR"
+
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh "$LOCAL_DIR"
 source_bashrc
+echo "rollout $LOCAL_DIR"
 
 GEN_DATA_SCALE="$1"
 EXPLAIN_ANALYZE="$2"
