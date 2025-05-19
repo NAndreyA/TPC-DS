@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+echo "rollout $LOCAL_DIR"
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh "$LOCAL_DIR"
 source_bashrc
