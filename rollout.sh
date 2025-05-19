@@ -2,6 +2,8 @@
 
 set -e
 
+LOCAL_DIR="${19}"
+
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh
 source_bashrc
