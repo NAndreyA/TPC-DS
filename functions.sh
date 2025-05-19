@@ -5,8 +5,8 @@ set -e
 #MYVAR="tpcds_variables.sh"
 
 #source $LOCAL_DIR/$MYVAR
-RUN_COMPRESS="$2"
-LEVEL_COMPRESS="$3"
+RUN_COMPRESS="$1"
+LEVEL_COMPRESS="$2"
 echo "show functions.sh $RUN_COMPRESS"
 echo "show functions.sh $LEVEL_COMPRESS"
 
