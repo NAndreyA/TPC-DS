@@ -1,7 +1,6 @@
 #!/bin/bash
 set -e
 
-LOCAL_DIR=$1
 echo "show $LOCAL_DIR"
 MYVAR="tpcds_variables.sh"
 
