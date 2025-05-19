@@ -2,14 +2,11 @@
 
 set -e
 
-LOCAL_DIR="${18}"
-echo "parameter ${18}"
+USER_DIR_TPCDS="${18}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/functions.sh
+source $PWD/functions.sh $USER_DIR_TPCDS
 source_bashrc
-echo "rollout LOCAL_DIR - $LOCAL_DIR"
-echo "rollout GEN_DATA_SCALE - $GEN_DATA_SCALE"
 
 GEN_DATA_SCALE="$1"
 EXPLAIN_ANALYZE="$2"
@@ -28,8 +25,6 @@ RUN_SCORE="${14}"
 SINGLE_USER_ITERATIONS="${15}"
 RUN_COMPRESS="${16}"
 LEVEL_COMPRESS="${17}"
-
-echo "rollout GEN_DATA_SCALE - $GEN_DATA_SCALE"
 
 if [[ "$GEN_DATA_SCALE" == "" || "$EXPLAIN_ANALYZE" == "" || "$RANDOM_DISTRIBUTION" == "" || "$MULTI_USER_COUNT" == "" || "$RUN_COMPILE_TPCDS" == "" || "$RUN_GEN_DATA" == "" || "$RUN_INIT" == "" || "$RUN_DDL" == "" || "$RUN_LOAD" == "" || "$RUN_SQL" == "" || "$RUN_SINGLE_USER_REPORT" == "" || "$RUN_MULTI_USER" == "" || "$RUN_MULTI_USER_REPORT" == "" || "$RUN_SCORE" == "" || "$SINGLE_USER_ITERATIONS" == "" ]]; then
 	echo "Please run this script from tpcds.sh so the correct parameters are passed to it."
