@@ -37,11 +37,6 @@ check_variables()
 		echo "INSTALL_DIR=\"/repo_tpcds\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
- 	local count=$(grep "USER_DIR_TPCDS=" $MYVAR | wc -l)
-	if [ "$count" -eq "0" ]; then
-		echo "USER_DIR_TPCDS=\"$PWD\"" >> $MYVAR
-		new_variable=$(($new_variable + 1))
-	fi
 	local count=$(grep "EXPLAIN_ANALYZE=" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "EXPLAIN_ANALYZE=\"false\"" >> $MYVAR
@@ -308,7 +303,6 @@ echo_variables()
 	echo "REPO_URL: $REPO_URL"
 	echo "ADMIN_USER: $ADMIN_USER"
 	echo "INSTALL_DIR: $INSTALL_DIR"
- 	echo "LOCAL_DIR: $LOCAL_DIR"
 	echo "MULTI_USER_COUNT: $MULTI_USER_COUNT"
  	echo "RUN_OS: $RUN_OS"
 	echo "############################################################################"
@@ -327,4 +321,4 @@ repo_init
 script_check
 echo_variables
 
-su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $RUN_COMPRESS $LEVEL_COMPRESS $USER_DIR_TPCDS"
+su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $RUN_COMPRESS $LEVEL_COMPRESS"
