@@ -9,6 +9,7 @@ PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh
 source_bashrc
 echo "rollout LOCAL_DIR - $LOCAL_DIR"
+echo "rollout RUN_OS - $RUN_OS"
 echo "rollout GEN_DATA_SCALE - $GEN_DATA_SCALE"
 
 GEN_DATA_SCALE="$1"
