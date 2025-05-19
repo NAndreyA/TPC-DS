@@ -24,8 +24,6 @@ RUN_MULTI_USER="${12}"
 RUN_MULTI_USER_REPORT="${13}"
 RUN_SCORE="${14}"
 SINGLE_USER_ITERATIONS="${15}"
-RUN_COMPRESS="${16}"
-LEVEL_COMPRESS="${17}"
 
 if [[ "$GEN_DATA_SCALE" == "" || "$EXPLAIN_ANALYZE" == "" || "$RANDOM_DISTRIBUTION" == "" || "$MULTI_USER_COUNT" == "" || "$RUN_COMPILE_TPCDS" == "" || "$RUN_GEN_DATA" == "" || "$RUN_INIT" == "" || "$RUN_DDL" == "" || "$RUN_LOAD" == "" || "$RUN_SQL" == "" || "$RUN_SINGLE_USER_REPORT" == "" || "$RUN_MULTI_USER" == "" || "$RUN_MULTI_USER_REPORT" == "" || "$RUN_SCORE" == "" || "$SINGLE_USER_ITERATIONS" == "" ]]; then
 	echo "Please run this script from tpcds.sh so the correct parameters are passed to it."
