@@ -2,10 +2,12 @@
 
 set -e
 
+RUN_COMPRESS="${16}"
+LEVEL_COMPRESS="${17}"
 USER_DIR_TPCDS="${18}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/functions.sh $USER_DIR_TPCDS
+source $PWD/functions.sh $USER_DIR_TPCDS $RUN_COMPRESS $LEVEL_COMPRESS
 source_bashrc
 
 GEN_DATA_SCALE="$1"
