@@ -310,6 +310,7 @@ echo_variables()
 	echo "INSTALL_DIR: $INSTALL_DIR"
  	echo "LOCAL_DIR: $LOCAL_DIR"
 	echo "MULTI_USER_COUNT: $MULTI_USER_COUNT"
+ 	echo "RUN_OS: $RUN_OS"
 	echo "############################################################################"
 	echo ""
 }
