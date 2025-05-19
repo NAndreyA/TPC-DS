@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e
 
-PWD=$(find / -name 'tpcds_variables.sh' | xargs dirname)
-
+echo "show $MYVAR"
 MYVAR="tpcds_variables.sh"
 
-source $PWD/$MYVAR
+source $LOCAL_DIR/$MYVAR
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
@@ -22,7 +21,6 @@ ADMIN_USER=`whoami`
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 MASTER_HOST=$(hostname -s)
 
-echo "$PWD/$MYVAR"
 echo "RUN TEST1_5 functions.sh $RUN_OS and $RUN_COMPRESS and $LEVEL_COMPRESS"
 
 get_gpfdist_port()
