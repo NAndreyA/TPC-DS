@@ -3,7 +3,7 @@
 set -e
 
 LOCAL_DIR="${18}"
-echo "parameter $18"
+echo "parameter ${18}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh
