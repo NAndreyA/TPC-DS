@@ -3,9 +3,10 @@
 set -e
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/functions.sh "$LOCAL_DIR"
+source $PWD/functions.sh
 source_bashrc
-echo "rollout $LOCAL_DIR"
+echo "rollout LOCAL_DIR - $LOCAL_DIR"
+echo "rollout GEN_DATA_SCALE - $GEN_DATA_SCALE"
 
 GEN_DATA_SCALE="$1"
 EXPLAIN_ANALYZE="$2"
