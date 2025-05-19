@@ -4,6 +4,7 @@ set -e
 PWD=$(find / -name 'tpcds_variables.sh' | xargs dirname)
 
 MYVAR="tpcds_variables.sh"
+
 source $PWD/$MYVAR
 
 count=$(alias | grep -w grep | wc -l)
@@ -21,7 +22,8 @@ ADMIN_USER=`whoami`
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 MASTER_HOST=$(hostname -s)
 
-echo "RUN TEST1_4 functions.sh $RUN_OS and $RUN_COMPRESS and $LEVEL_COMPRESS"
+echo "$PWD/$MYVAR"
+echo "RUN TEST1_5 functions.sh $RUN_OS and $RUN_COMPRESS and $LEVEL_COMPRESS"
 
 get_gpfdist_port()
 {
