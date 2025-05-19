@@ -5,6 +5,10 @@ set -e
 #MYVAR="tpcds_variables.sh"
 
 #source $LOCAL_DIR/$MYVAR
+RUN_COMPRESS=$2
+LEVEL_COMPRESS=$3
+echo "show functions.sh $RUN_COMPRESS"
+echo "show functions.sh $LEVEL_COMPRESS"
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
@@ -20,8 +24,6 @@ OSVERSION=`uname`
 ADMIN_USER=`whoami`
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 MASTER_HOST=$(hostname -s)
-
-echo "RUN TEST1_5 functions.sh $RUN_OS and $RUN_COMPRESS and $LEVEL_COMPRESS"
 
 get_gpfdist_port()
 {
