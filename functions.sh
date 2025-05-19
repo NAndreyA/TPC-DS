@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "show $MYVAR"
+echo "show $LOCAL_DIR"
 MYVAR="tpcds_variables.sh"
 
 source $LOCAL_DIR/$MYVAR
