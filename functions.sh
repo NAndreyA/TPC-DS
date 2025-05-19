@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-echo "show $LOCAL_DIR"
-MYVAR="tpcds_variables.sh"
+#echo "show $LOCAL_DIR"
+#MYVAR="tpcds_variables.sh"
 
-source $LOCAL_DIR/$MYVAR
+#source $LOCAL_DIR/$MYVAR
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
