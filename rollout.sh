@@ -2,14 +2,12 @@
 
 set -e
 
-RUN_OS="${16}"
-LOCAL_DIR="${19}"
+LOCAL_DIR="${18}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh
 source_bashrc
 echo "rollout LOCAL_DIR - $LOCAL_DIR"
-echo "rollout RUN_OS - $RUN_OS"
 echo "rollout GEN_DATA_SCALE - $GEN_DATA_SCALE"
 
 GEN_DATA_SCALE="$1"
@@ -27,9 +25,8 @@ RUN_MULTI_USER="${12}"
 RUN_MULTI_USER_REPORT="${13}"
 RUN_SCORE="${14}"
 SINGLE_USER_ITERATIONS="${15}"
-RUN_OS="${16}"
-RUN_COMPRESS="${17}"
-LEVEL_COMPRESS="${18}"
+RUN_COMPRESS="${16}"
+LEVEL_COMPRESS="${17}"
 
 echo "rollout GEN_DATA_SCALE - $GEN_DATA_SCALE"
 
