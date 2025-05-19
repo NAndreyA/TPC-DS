@@ -2,6 +2,7 @@
 
 set -e
 
+RUN_OS="${16}"
 LOCAL_DIR="${19}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
