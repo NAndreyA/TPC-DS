@@ -3,10 +3,9 @@ set -e
 
 RUN_COMPRESS="$6"
 LEVEL_COMPRESS="$7"
-echo "show rollout from 02_init, RUN_COMPRESS - $RUN_COMPRESS, LEVEL_COMPRESS - $LEVEL_COMPRESS"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../functions.sh 
+source $PWD/../functions.sh $RUN_COMPRESS $LEVEL_COMPRESS
 source_bashrc
 
 step=init
