@@ -128,13 +128,19 @@ check_variables()
 		echo "NAME_OS=\"RED OS\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
-  	#11
+   	#11
+	local count=$(grep "TYPE_ORIENTATION" $MYVAR | wc -l)
+	if [ "$count" -eq "0" ]; then
+		echo "TYPE_ORIENTATION=\"\"" >> $MYVAR
+		new_variable=$(($new_variable + 1))
+	fi
+  	#12
 	local count=$(grep "TYPE_COMPRESS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "TYPE_COMPRESS=\"zstd\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
-   	#12
+   	#13
 	local count=$(grep "LEVEL_COMPRESS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "LEVEL_COMPRESS=\"3\"" >> $MYVAR
@@ -322,4 +328,4 @@ repo_init
 script_check
 echo_variables
 
-su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $NAME_OS $TYPE_COMPRESS $LEVEL_COMPRESS"
+su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $NAME_OS $TYPE_ORIENTATION $TYPE_COMPRESS $LEVEL_COMPRESS"
