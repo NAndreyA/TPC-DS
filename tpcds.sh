@@ -123,7 +123,7 @@ check_variables()
 		new_variable=$(($new_variable + 1))
 	fi
  	#10
-	local count=$(grep "RUN_OS" $MYVAR | wc -l)
+	local count=$(grep "NAME_OS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "NAME_OS=\"RED OS\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
@@ -174,9 +174,9 @@ check_os()
 	echo "############################################################################"
 	echo ""
 	local NAMEOS=`. /etc/os-release; echo "$NAME"`
-	if [ "$NAMEOS" != "$RUN_OS" ]; then
+	if [ "$NAMEOS" != "$NAME_OS" ]; then
 		echo "CURRENT OS = "$NAMEOS"!!!"
- 		echo "EDIT tpcds_variables.sh, RUN_OS=\""$NAMEOS"\""
+ 		echo "EDIT tpcds_variables.sh, NAME_OS=\""$NAMEOS"\""
 		exit 1
 	fi
 }
@@ -303,7 +303,7 @@ echo_variables()
 	echo "ADMIN_USER: $ADMIN_USER"
 	echo "INSTALL_DIR: $INSTALL_DIR"
 	echo "MULTI_USER_COUNT: $MULTI_USER_COUNT"
- 	echo "RUN_OS: $RUN_OS"
+ 	echo "RUN_OS: $NAME_OS"
 	echo "############################################################################"
 	echo ""
 }
@@ -320,4 +320,4 @@ repo_init
 script_check
 echo_variables
 
-su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $RUN_COMPRESS $LEVEL_COMPRESS"
+su -l $ADMIN_USER -c "cd \"$INSTALL_DIR/$REPO\"; ./rollout.sh $GEN_DATA_SCALE $EXPLAIN_ANALYZE $RANDOM_DISTRIBUTION $MULTI_USER_COUNT $RUN_COMPILE_TPCDS $RUN_GEN_DATA $RUN_INIT $RUN_DDL $RUN_LOAD $RUN_SQL $RUN_SINGLE_USER_REPORT $RUN_MULTI_USER $RUN_MULTI_USER_REPORT $RUN_SCORE $SINGLE_USER_ITERATIONS $NAME_OS $TYPE_COMPRESS $LEVEL_COMPRESS"
