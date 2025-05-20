@@ -126,14 +126,12 @@ check_variables()
 	local count=$(grep "RUN_OS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "NAME_OS=\"RED OS\"" >> $MYVAR
-  		echo "###RED OS, Astra Linux, ALT SP Server, Ubuntu#" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
   	#11
 	local count=$(grep "TYPE_COMPRESS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "TYPE_COMPRESS=\"zstd\"" >> $MYVAR
-    		echo "###zlib, rle_type, zstd, quicklz#" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
    	#12
