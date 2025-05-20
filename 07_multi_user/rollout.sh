@@ -7,7 +7,7 @@ EXPLAIN_ANALYZE=$2
 RANDOM_DISTRIBUTION=$3
 MULTI_USER_COUNT=$4
 
-RUN_COMPRESS="$6"
+TYPE_COMPRESS="$6"
 LEVEL_COMPRESS="$7"
 
 if [[ "$GEN_DATA_SCALE" == "" || "$EXPLAIN_ANALYZE" == "" || "$RANDOM_DISTRIBUTION" == "" || "$MULTI_USER_COUNT" == "" ]]; then
@@ -23,7 +23,7 @@ if [ "$MULTI_USER_COUNT" -eq "0" ]; then
 fi
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../functions.sh $RUN_COMPRESS $LEVEL_COMPRESS
+source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS
 source_bashrc
 
 get_psql_count()
