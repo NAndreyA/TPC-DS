@@ -1,10 +1,8 @@
 #!/bin/bash
 set -e
 
-RUN_COMPRESS="$1"
+TYPE_COMPRESS="$1"
 LEVEL_COMPRESS="$2"
-echo "show functions.sh $RUN_COMPRESS"
-echo "show functions.sh $LEVEL_COMPRESS"
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
@@ -56,14 +54,14 @@ get_version()
 	#need to call source_bashrc first
 	VERSION=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT CASE WHEN POSITION ('Greenplum Database 4.3' IN version) > 0 THEN 'gpdb_4_3' WHEN POSITION ('Greenplum Database 5' IN version) > 0 THEN 'gpdb_5' WHEN POSITION ('Greenplum Database 6' IN version) > 0 THEN 'gpdb_6' ELSE 'postgresql' END FROM version();") 
 	if [[ "$VERSION" == *"gpdb"* ]]; then
-		compress_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = LOWER('$RUN_COMPRESS')")
+		compress_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = LOWER('$TYPE_COMPRESS')")
 		if [ "$compress_test" -eq "1" ]; then
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
 			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-   			SMALL_STORAGE="appendonly=true, orientation=column, compresstype=\"$RUN_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=\"$RUN_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-	 		LARGE_STORAGE="appendonly=true, orientation=column, compresstype=\"$RUN_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+   			SMALL_STORAGE="appendonly=true, orientation=column, compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+	 		LARGE_STORAGE="appendonly=true, orientation=column, compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
 		else
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
