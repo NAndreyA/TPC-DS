@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-RUN_COMPRESS="$6"
+TYPE_COMPRESS="$6"
 LEVEL_COMPRESS="$7"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../functions.sh $RUN_COMPRESS $LEVEL_COMPRESS
+source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS
 source_bashrc
 
 step=compile_tpcds
