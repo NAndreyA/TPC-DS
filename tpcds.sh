@@ -133,7 +133,9 @@ check_variables()
 	local count=$(grep "TYPE_COMPRESS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
 		echo "TYPE_COMPRESS=\"zstd\"" >> $MYVAR
-  		echo "#OPTIONS = zlib, rle_type, zstd, quicklz" >> $MYVAR
+  		echo "#########TYPE_COMPRESS#########" >> $MYVAR
+    		echo "#zlib, rle_type, zstd, quicklz#" >> $MYVAR
+      		echo "###############################" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
    	#12
