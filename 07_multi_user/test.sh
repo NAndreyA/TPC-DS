@@ -2,8 +2,11 @@
 
 set -e
 
+TYPE_COMPRESS="$6"
+LEVEL_COMPRESS="$7"
+
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../functions.sh
+source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS
 
 GEN_DATA_SCALE=$1
 session_id=$2
