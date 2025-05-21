@@ -17,7 +17,10 @@ table_name="init"
 
 set_segment_bashrc()
 {
-	#this is only needed if the segment hosts don't have the bashrc file created
+	local NAMEOS=`. /etc/os-release; echo "$NAME"`
+	echo "02_init -> rollout.sh -> $NAMEOS"
+ 
+ 	#this is only needed if the segment hosts don't have the bashrc file created
 	echo "if [ -f /etc/bashrc ]; then" > $PWD/segment_bashrc
 	echo "	. /etc/bashrc" >> $PWD/segment_bashrc
 	echo "fi" >> $PWD/segment_bashrc
