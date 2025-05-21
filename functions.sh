@@ -67,9 +67,9 @@ get_version()
 				MEDIUM_STORAGE="compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
 				LARGE_STORAGE="compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
   			fi
-			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
-			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
-	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+			#SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+			#MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+	 		#LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
 		else
     			if [ "$TYPE_ORIENTATION" = "row" && "$TYPE_ORIENTATION" = "column" ]; then
    				SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
