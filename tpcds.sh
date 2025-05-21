@@ -197,10 +197,11 @@ check_orientation()
 	echo "Check type orientation"
 	echo "############################################################################"
 	echo ""
-	local NAMEOS=`. /etc/os-release; echo "$NAME"`
-	if [ "$NAMEOS" != "$NAME_OS" ]; then
-		echo "CURRENT OS = "$NAMEOS"!!!"
- 		echo "EDIT tpcds_variables.sh, NAME_OS=\""$NAMEOS"\""
+	#local NAMEOS=`. /etc/os-release; echo "$NAME"`
+	#if [ "$TYPE_ORIENTATION" != "row" ]; then
+	 if [ "$TYPE_ORIENTATION" != "row" && "$TYPE_ORIENTATION" != "column" ]; then
+		echo "Correct values: row or column"
+ 		echo "EDIT tpcds_variables.sh"
 		exit 1
 	fi
 }
@@ -339,6 +340,7 @@ echo_variables()
 check_user
 check_variables
 check_os
+check_orientation
 yum_installs
 repo_init
 script_check
