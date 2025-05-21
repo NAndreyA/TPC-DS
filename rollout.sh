@@ -2,10 +2,9 @@
 
 set -e
 
-NAME_OS="${16}"
-TYPE_ORIENTATION="${17}"
-TYPE_COMPRESS="${18}"
-LEVEL_COMPRESS="${19}"
+TYPE_ORIENTATION="${16}"
+TYPE_COMPRESS="${17}"
+LEVEL_COMPRESS="${18}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION
