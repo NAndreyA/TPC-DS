@@ -3,9 +3,10 @@ set -e
 
 TYPE_COMPRESS="$6"
 LEVEL_COMPRESS="$7"
+TYPE_ORIENTATION="$8"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS
+source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION
 source_bashrc
 step=single_user_reports
 
