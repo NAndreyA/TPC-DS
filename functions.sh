@@ -4,6 +4,7 @@ set -e
 TYPE_COMPRESS="$1"
 LEVEL_COMPRESS="$2"
 TYPE_ORIENTATION="$3"
+echo "functions.sh $TYPE_ORIENTATION"
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
