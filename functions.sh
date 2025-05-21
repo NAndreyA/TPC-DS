@@ -57,24 +57,30 @@ get_version()
 	if [[ "$VERSION" == *"gpdb"* ]]; then
 		compress_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = LOWER('$TYPE_COMPRESS')")
 		if [ "$compress_test" -eq "1" ]; then
-			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
-			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-   			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+  			if [ "$TYPE_ORIENTATION" = "row" && "$TYPE_ORIENTATION" = "column" ]; then
+   				SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+				MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+	 			LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+			else
+				SMALL_STORAGE="compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+				MEDIUM_STORAGE="compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+				LARGE_STORAGE="compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+  			fi
+			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
 		else
-			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
-			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-			SMALL_STORAGE="appendonly=true, orientation=column"
-			MEDIUM_STORAGE="appendonly=true, orientation=column"
-	 		LARGE_STORAGE="appendonly=true, orientation=column"
-		fi
-	else
-		SMALL_STORAGE=""
-		MEDIUM_STORAGE=""
-		LARGE_STORAGE=""
+    			if [ "$TYPE_ORIENTATION" = "row" && "$TYPE_ORIENTATION" = "column" ]; then
+   				SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+				MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+	 			LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
+			else
+				SMALL_STORAGE=""
+				MEDIUM_STORAGE=""
+				LARGE_STORAGE=""
+  			fi
+     		fi
+
 	fi
 }
 init_log()
