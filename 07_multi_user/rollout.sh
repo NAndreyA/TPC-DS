@@ -9,6 +9,7 @@ MULTI_USER_COUNT=$4
 
 TYPE_COMPRESS="$6"
 LEVEL_COMPRESS="$7"
+TYPE_ORIENTATION="$8"
 
 if [[ "$GEN_DATA_SCALE" == "" || "$EXPLAIN_ANALYZE" == "" || "$RANDOM_DISTRIBUTION" == "" || "$MULTI_USER_COUNT" == "" ]]; then
         echo "You must provide the scale as a parameter in terms of Gigabytes, true/false to run queries with EXPLAIN ANALYZE option, true/false to use random distrbution, and the number of concurrent users to run."
@@ -23,7 +24,7 @@ if [ "$MULTI_USER_COUNT" -eq "0" ]; then
 fi
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS
+source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION
 source_bashrc
 
 get_psql_count()
