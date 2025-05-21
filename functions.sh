@@ -3,6 +3,7 @@ set -e
 
 TYPE_COMPRESS="$1"
 LEVEL_COMPRESS="$2"
+TYPE_ORIENTATION="$3"
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
@@ -59,9 +60,9 @@ get_version()
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
 			#LARGE_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
-   			SMALL_STORAGE="appendonly=true, orientation=column, compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-			MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-	 		LARGE_STORAGE="appendonly=true, orientation=column, compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+   			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
 		else
 			#SMALL_STORAGE="appendonly=true, orientation=row, compresstype=zstd, compresslevel=4"
 			#MEDIUM_STORAGE="appendonly=true, orientation=column, compresstype=zstd, compresslevel=4"
