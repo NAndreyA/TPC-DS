@@ -8,7 +8,7 @@ TYPE_COMPRESS="${18}"
 LEVEL_COMPRESS="${19}"
 
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-source $PWD/functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS
+source $PWD/functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION
 source_bashrc
 
 GEN_DATA_SCALE="$1"
