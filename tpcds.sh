@@ -83,13 +83,13 @@ check_variables()
 	#03
 	local count=$(grep "RUN_DDL" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_DDL=\"false\"" >> $MYVAR
+		echo "RUN_DDL=\"true\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#04
 	local count=$(grep "RUN_LOAD" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "RUN_LOAD=\"false\"" >> $MYVAR
+		echo "RUN_LOAD=\"true\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
 	#05
