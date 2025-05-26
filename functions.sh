@@ -55,14 +55,12 @@ get_version()
 {
 	#need to call source_bashrc first
 	VERSION=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT CASE WHEN POSITION ('Greenplum Database 4.3' IN version) > 0 THEN 'gpdb_4_3' WHEN POSITION ('Greenplum Database 5' IN version) > 0 THEN 'gpdb_5' WHEN POSITION ('Greenplum Database 6' IN version) > 0 THEN 'gpdb_6' ELSE 'postgresql' END FROM version();") 
-	if [[ "$VERSION" == *"gpdb"* ]] && [[ "$TYPE_ORIENTATION" = "row" || "$TYPE_ORIENTATION" = "column" ]]; then
+	if [[ "$VERSION" == *"gpdb"* ]] && [[ "$TYPE_ORIENTATION" == "row" || "$TYPE_ORIENTATION" == "column" ]]; then
 		compress_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = LOWER('$TYPE_COMPRESS')")
 		if [ "$compress_test" -eq "1" ]; then
-  			if [ "$TYPE_ORIENTATION" = "row" -o "$TYPE_ORIENTATION" = "column" ]; then
-   				SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-				MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-	 			LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
-			fi
+   			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
+	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
    		else
    			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
 			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
