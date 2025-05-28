@@ -1,4 +1,5 @@
 CREATE TABLE tpcds.catalog_sales (
+    cs_item_sk integer NOT NULL,
     cs_sold_date_sk integer,
     cs_sold_time_sk integer,
     cs_ship_date_sk integer,
@@ -14,7 +15,6 @@ CREATE TABLE tpcds.catalog_sales (
     cs_catalog_page_sk integer,
     cs_ship_mode_sk integer,
     cs_warehouse_sk integer,
-    cs_item_sk integer NOT NULL,
     cs_promo_sk integer,
     cs_order_number bigint NOT NULL,
     cs_quantity integer,
@@ -35,4 +35,4 @@ CREATE TABLE tpcds.catalog_sales (
     cs_net_profit numeric(7,2)
 );
 
-alter table tpcds.catalog_sales add primary key (cs_item_sk, cs_order_number, cs_sold_date_sk);
+alter table tpcds.catalog_sales add primary key (cs_item_sk, cs_order_number);
