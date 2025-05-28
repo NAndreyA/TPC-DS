@@ -34,5 +34,6 @@ CREATE TABLE tpcds.catalog_sales (
     cs_net_paid_inc_ship_tax numeric(7,2),
     cs_net_profit numeric(7,2)
 );
-
-alter table tpcds.catalog_sales add primary key (cs_item_sk, cs_order_number);
+#Changes to allow creation of heap tables
+#alter table tpcds.catalog_sales add primary key (cs_item_sk, cs_order_number);
+alter table tpcds.catalog_sales add primary key (cs_item_sk, cs_order_number, cs_sold_date_sk);
