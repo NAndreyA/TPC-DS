@@ -35,4 +35,4 @@ CREATE TABLE tpcds.web_sales (
     ws_net_profit numeric(7,2)
 );
 
-alter table tpcds.web_sales add primary key (ws_item_sk, ws_order_number, ws_ext_sales_price);
+alter table tpcds.web_sales add primary key (ws_item_sk, ws_order_number, ws_wholesale_cost, ws_coupon_amt);
