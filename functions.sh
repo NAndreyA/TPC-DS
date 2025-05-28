@@ -68,7 +68,8 @@ get_version()
 	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
   		fi
     	else
-		SMALL_STORAGE=""
+		VERSION="postgresql"
+  		SMALL_STORAGE=""
 		MEDIUM_STORAGE=""
 		LARGE_STORAGE=""
 	fi
