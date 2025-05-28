@@ -1,4 +1,5 @@
 CREATE TABLE tpcds.store_sales (
+    ss_ticket_number bigint NOT NULL,
     ss_sold_date_sk integer,
     ss_sold_time_sk integer,
     ss_item_sk int NOT NULL,
@@ -8,7 +9,6 @@ CREATE TABLE tpcds.store_sales (
     ss_addr_sk integer,
     ss_store_sk integer,
     ss_promo_sk integer,
-    ss_ticket_number bigint NOT NULL,
     ss_quantity integer,
     ss_wholesale_cost numeric(7,2),
     ss_list_price numeric(7,2),
