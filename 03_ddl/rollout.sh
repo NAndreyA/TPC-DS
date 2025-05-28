@@ -35,8 +35,7 @@ init_log $step
 get_version
 
 if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
-	filter="gpdb"
- 	filter1="postgres"
+	filter="gpdb_postgresql"
 elif [ "$VERSION" == *"gpdb"* ]; then
 	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
@@ -53,8 +52,7 @@ for i in $(ls $PWD/*.$filter.*.sql); do
 	table_name=$(echo $i | awk -F '.' '{print $3}')
 	start_log
 
-	#if [[ "$filter" == "gpdb" ]] || [[ "$filter" == "gpdb" && "$filter1" != "postgres" ]]; then
- 	if [ "$filter1" != "postgres" ]; then
+	if [ "$filter" == "gpdb" ]; then
 		if [ "$RANDOM_DISTRIBUTION" == "true" ]; then
 			DISTRIBUTED_BY="DISTRIBUTED RANDOMLY"
 		else
@@ -77,7 +75,7 @@ for i in $(ls $PWD/*.$filter.*.sql); do
 done
 
 #external tables are the same for all gpdb
-if [ "$filter" == "gpdb" ] || [ "$filter1" == "postgres" ]; then
+if [ "$filter" == "gpdb" ] || [ "$filter" == "gpdb_postgresql" ]; then
 
 	get_gpfdist_port
 
