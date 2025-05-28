@@ -1,8 +1,8 @@
 CREATE TABLE tpcds.web_sales (
+    ws_item_sk integer NOT NULL,
     ws_sold_date_sk integer,
     ws_sold_time_sk integer,
     ws_ship_date_sk integer,
-    ws_item_sk integer NOT NULL,
     ws_bill_customer_sk integer,
     ws_bill_cdemo_sk integer,
     ws_bill_hdemo_sk integer,
@@ -35,4 +35,4 @@ CREATE TABLE tpcds.web_sales (
     ws_net_profit numeric(7,2)
 );
 
-alter table tpcds.web_sales add primary key (ws_item_sk, ws_order_number, ws_sold_date_sk);
+alter table tpcds.web_sales add primary key (ws_item_sk, ws_order_number);
