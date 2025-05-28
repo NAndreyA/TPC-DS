@@ -35,7 +35,7 @@ init_log $step
 get_version
 
 if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
-	filter="gpdb"
+	filter="postgresql"
 elif [ "$VERSION" == *"gpdb"* ]; then
 	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
