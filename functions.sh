@@ -4,7 +4,6 @@ set -e
 TYPE_COMPRESS="$1"
 LEVEL_COMPRESS="$2"
 TYPE_ORIENTATION="$3"
-echo "functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION"
 
 count=$(alias | grep -w grep | wc -l)
 if [ "$count" -gt "0" ]; then
@@ -67,7 +66,7 @@ get_version()
 			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
 	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
   		fi
-    	elif [[ "$VERSION" == *"gpdb"* ]] && [[ "$TYPE_ORIENTATION" = "" || "$TYPE_ORIENTATION" = "heap" ]]; then
+    	elif [[ "$VERSION" == *"gpdb"* ]] && [[ "$TYPE_ORIENTATION" = "null" || "$TYPE_ORIENTATION" = "heap" ]]; then
      		VERSION="$VERSION"
        		VERSION1="postgresql"
     	else
