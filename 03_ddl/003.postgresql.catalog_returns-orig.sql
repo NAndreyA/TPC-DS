@@ -27,6 +27,6 @@ CREATE TABLE tpcds.catalog_returns (
     cr_store_credit numeric(7,2),
     cr_net_loss numeric(7,2)
 );
-#Changes to allow creation of heap tables
-#alter table tpcds.catalog_returns add primary key (cr_item_sk, cr_order_number);
-alter table tpcds.catalog_returns add primary key (cr_item_sk, cr_order_number, cr_returned_date_sk);
+
+alter table tpcds.catalog_returns add primary key (cr_item_sk, cr_order_number);
+
