@@ -75,7 +75,7 @@ for i in $(ls $PWD/*.$filter.*.sql); do
 done
 
 #external tables are the same for all gpdb
-if [ "$filter" == "gpdb" || "$filter" == "gpdb_postgres" ]; then
+if [ "$filter" == "gpdb" ] || [ "$filter" == "gpdb_postgres" ]; then
 
 	get_gpfdist_port
 
