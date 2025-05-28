@@ -54,7 +54,7 @@ for i in $(ls $PWD/*.$filter.*.sql); do
 	start_log
 
 	#if [[ "$filter" == "gpdb" ]] || [[ "$filter" == "gpdb" && "$filter1" != "postgres" ]]; then
- 	if [ "$filter" != "postgresql" ] && [ "$filter" == "gpdb" ]; then
+ 	if [ "$filter1" != "postgres" ]; then
 		if [ "$RANDOM_DISTRIBUTION" == "true" ]; then
 			DISTRIBUTED_BY="DISTRIBUTED RANDOMLY"
 		else
