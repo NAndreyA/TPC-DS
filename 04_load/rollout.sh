@@ -18,7 +18,7 @@ get_version
 if [[ "$VERSION" == *"gpdb"* ]]; then
 	filter="gpdb"
 elif [ "$VERSION1" == "postgresql" ]; then
-	VERSION1=$VERSION
+	VERSION1="gpdb"
 	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
 	filter="postgresql"
