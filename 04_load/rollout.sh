@@ -17,8 +17,6 @@ ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 get_version
 if [[ "$VERSION" == *"gpdb"* ]]; then
 	filter="gpdb"
-elif [ "$VERSION1" == "postgresql" ]; then
-	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
 	filter="postgresql"
 else
