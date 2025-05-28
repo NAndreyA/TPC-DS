@@ -24,5 +24,3 @@ CREATE TABLE tpcds.web_returns (
     wr_account_credit numeric(7,2),
     wr_net_loss numeric(7,2)
 );
-
-alter table tpcds.web_returns add primary key (wr_order_number, wr_item_sk, wr_returned_date_sk);
