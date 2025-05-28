@@ -15,10 +15,7 @@ init_log $step
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 
 get_version
-if [[ "$VERSION" == *"gpdb"* ]]; then
-	filter="gpdb"
-elif [ "$VERSION1" == "postgresql" ]; then
-	VERSION1=*"gpdb"*
+if [[ "$VERSION" == *"gpdb"* || "$VERSION1" == *"postgresql"*]]; then
 	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
 	filter="postgresql"
