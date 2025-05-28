@@ -1,4 +1,5 @@
 CREATE TABLE tpcds.store_sales (
+    ss_item_sk int NOT NULL,
     ss_sold_date_sk integer,
     ss_sold_time_sk integer,
     ss_item_sk int NOT NULL,
@@ -24,4 +25,4 @@ CREATE TABLE tpcds.store_sales (
     ss_net_profit numeric(7,2)
 );
 
-alter table tpcds.store_sales add primary key (ss_item_sk, ss_ticket_number, ss_sold_date_sk);
+alter table tpcds.store_sales add primary key (ss_item_sk, ss_ticket_number);
