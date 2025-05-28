@@ -15,7 +15,7 @@ init_log $step
 ADMIN_HOME=$(eval echo ~$ADMIN_USER)
 
 get_version
-if [[ "$VERSION" == *"gpdb"* ]] || [[ "$VERSION1" == "postgresql" ]]; then
+if [[ "$VERSION" == *"gpdb"* ]] || [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
 	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
 	filter="postgresql"
@@ -78,7 +78,7 @@ start_gpfdist()
 	fi
 }
 
-if [[ "$VERSION" == *"gpdb"* ]] || [[ "$VERSION1" == "postgresql" ]]; then
+if [[ "$VERSION" == *"gpdb"* ]] || [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
 	copy_script
 	start_gpfdist
 
@@ -125,7 +125,7 @@ fi
 max_id=$(ls $PWD/*.sql | tail -1)
 i=$(basename $max_id | awk -F '.' '{print $1}' | sed 's/^0*//')
 
-if [[ "$VERSION" == *"gpdb"* ]]; then
+if [[ "$VERSION" == *"gpdb"* ]] || [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
 	dbname="$PGDATABASE"
 	if [ "$dbname" == "" ]; then
 		dbname="$ADMIN_USER"
@@ -137,7 +137,7 @@ if [[ "$VERSION" == *"gpdb"* ]]; then
 fi
 
 
-if [[ "$VERSION" == *"gpdb"* ]]; then
+if [[ "$VERSION" == *"gpdb"* ]] || [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
 	schema_name="tpcds"
 	table_name="tpcds"
 
