@@ -5,8 +5,6 @@ TYPE_COMPRESS="$6"
 LEVEL_COMPRESS="$7"
 TYPE_ORIENTATION="$8"
 
-echo "03_ddl -> rollout.sh -> $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION"
-
 PWD=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $PWD/../functions.sh $TYPE_COMPRESS $LEVEL_COMPRESS $TYPE_ORIENTATION
 source_bashrc
@@ -21,8 +19,6 @@ SINGLE_USER_ITERATIONS=$5
 #luka multiplying qiantity of partitions with EVERY=1 parameter in DDL
 #EVERY is used for web_returns, it was "180" in a classic TPC-DS RunningJon
 EVERY="180"
-
-
 
 if [[ "$GEN_DATA_SCALE" == "" || "$EXPLAIN_ANALYZE" == "" || "$RANDOM_DISTRIBUTION" == "" || "$MULTI_USER_COUNT" == "" || "$SINGLE_USER_ITERATIONS" == "" ]]; then
 	echo "You must provide the scale as a parameter in terms of Gigabytes, true/false to run queries with EXPLAIN ANALYZE option, true/false to use random distrbution, multi-user count, and the number of sql iterations."
