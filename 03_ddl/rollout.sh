@@ -53,7 +53,8 @@ for i in $(ls $PWD/*.$filter.*.sql); do
 	table_name=$(echo $i | awk -F '.' '{print $3}')
 	start_log
 
-	if [ "$filter" == "gpdb" ] || ["$filter1" != "postgres" ]; then
+	#if [ "$filter" == "gpdb" ] || [ "$filter" == "gpdb" && "$filter1" != "postgres" ]; then
+ 	if [ "$filter" != "postgresql" ]; then
 		if [ "$RANDOM_DISTRIBUTION" == "true" ]; then
 			DISTRIBUTED_BY="DISTRIBUTED RANDOMLY"
 		else
