@@ -67,9 +67,9 @@ get_version()
 			MEDIUM_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
 	 		LARGE_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\""
   		fi
+    	elif [[ "$VERSION" == *"gpdb"* ]] && [[ "$TYPE_ORIENTATION" = "" || "$TYPE_ORIENTATION" = "heap" ]]; then
+     		VERSION1="postgresql"
     	else
-		VERSION=$VERSION1
-  		VERSION1="postgresql"
   		SMALL_STORAGE=""
 		MEDIUM_STORAGE=""
 		LARGE_STORAGE=""
