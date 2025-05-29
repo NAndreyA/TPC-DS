@@ -2,7 +2,7 @@ CREATE TABLE tpcds.store_sales (
     ss_ticket_number bigint NOT NULL,
     ss_sold_date_sk integer,
     ss_sold_time_sk integer,
-    ss_item_sk int NOT NULL,
+    ss_item_sk int,
     ss_customer_sk integer,
     ss_cdemo_sk integer,
     ss_hdemo_sk integer,
