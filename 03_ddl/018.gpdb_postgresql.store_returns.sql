@@ -1,5 +1,5 @@
 CREATE TABLE tpcds.store_returns (
-    sr_item_sk integer NOT NULL,
+    sr_item_sk integer,
     sr_returned_date_sk integer,
     sr_return_time_sk integer,
     sr_customer_sk integer,
