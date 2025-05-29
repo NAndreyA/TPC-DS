@@ -56,16 +56,12 @@ get_version()
 	VERSION=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT CASE WHEN POSITION ('Greenplum Database 4.3' IN version) > 0 THEN 'gpdb_4_3' WHEN POSITION ('Greenplum Database 5' IN version) > 0 THEN 'gpdb_5' WHEN POSITION ('Greenplum Database 6' IN version) > 0 THEN 'gpdb_6' ELSE 'postgresql' END FROM version();") 
     	
   	if [[ "$TYPE_ORIENTATION" == "row" ]]; then
-     		echo "heap tables are not used"
        		VERSION1="null"
         elif [[ "$TYPE_ORIENTATION" == "column" ]]; then
-     		echo "heap tables are not used"
        		VERSION1="null"
 	elif [[ "$TYPE_ORIENTATION" == "heap" ]]; then
-     		echo "heap tables are not used"
        		VERSION1="gpdb_postgresql"
     	else
-	 	echo "Creating a HEAP table"
     		VERSION1="postgresql"
         fi
 
