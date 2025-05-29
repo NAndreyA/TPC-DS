@@ -23,5 +23,3 @@ CREATE TABLE tpcds.store_sales (
     ss_net_paid_inc_tax numeric(7,2),
     ss_net_profit numeric(7,2)
 );
-
-alter table tpcds.store_sales add primary key (ss_item_sk, ss_ticket_number);
