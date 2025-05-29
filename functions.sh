@@ -61,9 +61,12 @@ get_version()
         elif [[ "$TYPE_ORIENTATION" == "column" ]]; then
      		echo "heap tables are not used"
        		VERSION1="null"
+	elif [[ "$TYPE_ORIENTATION" == "heap" ]]; then
+     		echo "heap tables are not used"
+       		VERSION1="gpdb_postgresql"
     	else
 	 	echo "Creating a HEAP table"
-    		VERSION1="gpdb_postgresql"
+    		VERSION1="postgresql"
         fi
 
 	if [[ "$VERSION" == *"gpdb"* && "VERSION1" != "gpdb_postgresql" ]]; then
