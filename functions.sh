@@ -57,7 +57,7 @@ get_version()
 	#TYPE1="row"
  	#TYPE2="column"
     	
-  	if [[ "$TYPE_ORIENTATION" -ne "row" || "$TYPE_ORIENTATION" -ne "column" ]]; then
+  	if [[ "$TYPE_ORIENTATION" != "row" || "$TYPE_ORIENTATION" != "column" ]]; then
   		echo "Creating a HEAP table"
     		VERSION1="gpdb_postgresql"
     	else
