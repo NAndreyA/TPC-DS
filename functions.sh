@@ -65,7 +65,7 @@ get_version()
        		VERSION1="null"
         fi
   	#if [[ "$VERSION" == *"gpdb"* ]] && [[ "$TYPE_ORIENTATION" == "row" || "$TYPE_ORIENTATION" == "column" ]]; then
-	if [[ "$VERSION" == *"gpdb"* ]] && [[ "VERSION1" != "gpdb_postgresql" ]]; then
+	if [[ "$VERSION" == *"gpdb"* && "VERSION1" != "gpdb_postgresql" ]]; then
 		compress_test=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT COUNT(*) FROM pg_compression WHERE compname = LOWER('$TYPE_COMPRESS')")
 		if [ "$compress_test" -eq "1" ]; then
    			SMALL_STORAGE="appendonly=true, orientation=\"$TYPE_ORIENTATION\", compresstype=\"$TYPE_COMPRESS\", compresslevel=\"$LEVEL_COMPRESS\""
