@@ -35,7 +35,7 @@ echo "03_ddl -> rollout.sh -> $VERSION and $VERSION1"
 if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "gpdb_postgresql" ]]; then
 #if [[ "$VERSION1" == "postgresql" ]]; then
 	filter="gpdb_postgresql"
-elif [ "$VERSION" == *"gpdb"* ]; then
+elif [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "null" ]]; then
 	filter="gpdb"
 elif [ "$VERSION" == "postgresql" ]; then
 	filter="postgresql"
