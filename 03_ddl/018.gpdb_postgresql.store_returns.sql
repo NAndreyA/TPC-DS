@@ -1,7 +1,7 @@
 CREATE TABLE tpcds.store_returns (
+    sr_item_sk integer NOT NULL,
     sr_returned_date_sk integer,
     sr_return_time_sk integer,
-    sr_item_sk integer NOT NULL,
     sr_customer_sk integer,
     sr_cdemo_sk integer,
     sr_hdemo_sk integer,
@@ -21,4 +21,4 @@ CREATE TABLE tpcds.store_returns (
     sr_net_loss numeric(7,2)
 );
 
-alter table tpcds.store_returns add primary key (sr_item_sk, sr_ticket_number, sr_returned_date_sk);
+alter table tpcds.store_returns add primary key (sr_item_sk, sr_ticket_number);
