@@ -30,7 +30,8 @@ step=ddl
 init_log $step
 get_version
 
-if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
+#if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "postgresql" ]]; then
+if [[ "$VERSION1" == "postgresql" ]]; then
 	filter="gpdb_postgresql"
 elif [ "$VERSION" == *"gpdb"* ]; then
 	filter="gpdb"
