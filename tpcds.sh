@@ -212,7 +212,7 @@ check_orientation()
     		echo "CORRECT VALUE"
       	else
     		echo "INCORRECT VALUE"
-  		echo "Correct values: row or column or null or heap"
+  		echo "Correct value: || row || column || heap ||"
  		echo "EDIT tpcds_variables.sh"
 		exit 1
 	fi
