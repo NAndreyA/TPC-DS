@@ -199,15 +199,24 @@ check_orientation()
 	echo ""
 	#local NAMEOS=`. /etc/os-release; echo "$NAME"`
 	#if [ "$TYPE_ORIENTATION" != "row" ]; then
- 	TYPE1="row"
-  	TYPE2="column"
-   	TYPE3="null"
-    	TYPE4="heap"
-	if [[ "$TYPE_ORIENTATION" != "$TYPE1" || "$TYPE_ORIENTATION" != "$TYPE2" || "$TYPE_ORIENTATION" != "$TYPE3" || "$TYPE_ORIENTATION" != "$TYPE4" ]]; then
-		echo "Correct values: row or column or null or heap"
+ 	#TYPE1="row"
+  	#TYPE2="column"
+   	#TYPE3="null"
+    	#TYPE4="heap"
+	#if [[ "$TYPE_ORIENTATION" != "$TYPE1" || "$TYPE_ORIENTATION" != "$TYPE2" || "$TYPE_ORIENTATION" != "$TYPE3" || "$TYPE_ORIENTATION" != "$TYPE4" ]]; then
+	if [[ "$TYPE_ORIENTATION" == "row" ]]; then
+ 		echo "CORRECT VALUE"
+   	elif [[ "$TYPE_ORIENTATION" == "column" ]]; then
+  		echo "CORRECT VALUE"
+    	elif [[ "$TYPE_ORIENTATION" == "null" ]]; then
+    		echo "CORRECT VALUE"
+	elif [[ "$TYPE_ORIENTATION" == "heap" ]]; then
+    		echo "CORRECT VALUE"
+      	else
+    		echo "INCORRECT VALUE"
+  		echo "Correct values: row or column or null or heap"
  		echo "EDIT tpcds_variables.sh"
 		exit 1
-
 	fi
 }
 
