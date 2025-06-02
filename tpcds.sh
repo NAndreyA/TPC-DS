@@ -149,17 +149,18 @@ check_variables()
  	#14
 	local count=$(grep "COMMENTS:" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
+ 		echo "############################################################################" >> $MYVAR
 		echo "#COMMENTS:" >> $MYVAR
+  		echo "############################################################################" >> $MYVAR
   		echo "#TYPE_ORIENTATION -> heap || row || column" >> $MYVAR
     		echo "#TYPE_COMPRESS -> null || zlib || rle_type || zstd || quicklz" >> $MYVAR
       		echo "#LEVEL_COMPRESS -> null || value from 1 to 9" >> $MYVAR
+		echo "############################################################################" >> $MYVAR
 		#new_variable=$(($new_variable + 1))
 	fi
 
 	if [ "$new_variable" -gt "0" ]; then
 		echo "There are new variables in the tpcds_variables.sh file.  Please review to ensure the values are correct and then re-run this script."
-  		#echo "############################################################################"
-  		#echo "OS -> RED OS || Astra Linux || ALT SP Server || Ubuntu || RHEL || CentOS || Fedora"
     		echo "############################################################################"
     		echo "TYPE ORIENTATION -> heap || row || column"
       		echo "############################################################################"
