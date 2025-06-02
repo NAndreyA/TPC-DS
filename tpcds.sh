@@ -131,19 +131,28 @@ check_variables()
    	#11
 	local count=$(grep "TYPE_ORIENTATION" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "TYPE_ORIENTATION=\"\"" >> $MYVAR
+		echo "TYPE_ORIENTATION=\"row\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
   	#12
 	local count=$(grep "TYPE_COMPRESS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "TYPE_COMPRESS=\"zstd\"" >> $MYVAR
+		echo "TYPE_COMPRESS=\"null\"" >> $MYVAR
 		new_variable=$(($new_variable + 1))
 	fi
    	#13
 	local count=$(grep "LEVEL_COMPRESS" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "LEVEL_COMPRESS=\"3\"" >> $MYVAR
+		echo "LEVEL_COMPRESS=\"1\"" >> $MYVAR
+		new_variable=$(($new_variable + 1))
+	fi
+ 	#14
+	local count=$(grep "COMMENTS:" $MYVAR | wc -l)
+	if [ "$count" -eq "0" ]; then
+		echo "#COMMENTS:\"\"" >> $MYVAR
+  		echo "#TYPE ORIENTATION -> heap || row || column"
+    		echo "#TYPE COMPRESS -> null || zlib || rle_type || zstd || quicklz"
+      		echo "#TYPE COMPRESS -> null || value from 1 to 9"
 		new_variable=$(($new_variable + 1))
 	fi
 
