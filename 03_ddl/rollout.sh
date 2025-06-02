@@ -1,4 +1,4 @@
-#!/bin/bash
+o #!/bin/bash
 set -e
 
 TYPE_COMPRESS="$6"
@@ -29,7 +29,7 @@ fi
 step=ddl
 init_log $step
 get_version
-
+echo "03_ddl -> rollout.sh -> $VERSION1"
 if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "gpdb_postgresql" ]]; then
 	filter="gpdb_postgresql"
 elif [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "gpdb" ]]; then
