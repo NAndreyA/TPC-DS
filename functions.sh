@@ -56,9 +56,9 @@ get_version()
 	VERSION=$(psql -v ON_ERROR_STOP=1 -t -A -c "SELECT CASE WHEN POSITION ('Greenplum Database 4.3' IN version) > 0 THEN 'gpdb_4_3' WHEN POSITION ('Greenplum Database 5' IN version) > 0 THEN 'gpdb_5' WHEN POSITION ('Greenplum Database 6' IN version) > 0 THEN 'gpdb_6' ELSE 'postgresql' END FROM version();") 
     	
   	if [[ "$TYPE_ORIENTATION" == "row" ]]; then
-       		VERSION1="null"
+       		VERSION1="gpdb"
         elif [[ "$TYPE_ORIENTATION" == "column" ]]; then
-       		VERSION1="null"
+       		VERSION1="gpdb"
 	elif [[ "$TYPE_ORIENTATION" == "heap" ]]; then
        		VERSION1="gpdb_postgresql"
     	else
