@@ -23,13 +23,17 @@ set_segment_bashrc()
 	echo "if [ -f /etc/bashrc ]; then" > $PWD/segment_bashrc
 	echo "	. /etc/bashrc" >> $PWD/segment_bashrc
 	echo "fi" >> $PWD/segment_bashrc
- 	#Path SH for OS RedHat, Linux, RedOS
-	#echo "source /usr/local/greenplum-db/greenplum_path.sh" >> $PWD/segment_bashrc
-	#echo "export LD_PRELOAD=/lib64/libz.so.1 ps" >> $PWD/segment_bashrc
- 	#Path LIB for OS Astra Linux
- 	echo "source /usr/lib/gpdb/greenplum_path.sh" >> $PWD/segment_bashrc
-  	echo "export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps" >> $PWD/segment_bashrc
-	chmod 755 $PWD/segment_bashrc
+ 	
+  	if [ "$NAMEOS" == "Astra Linux" ]; then
+ 		#Path LIB for OS Astra Linux
+ 		echo "source /usr/lib/gpdb/greenplum_path.sh" >> $PWD/segment_bashrc
+  		echo "export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps" >> $PWD/segment_bashrc
+		chmod 755 $PWD/segment_bashrc
+ 	else
+  	 	#Path SH for OS RedHat, Linux, RedOS
+		echo "source /usr/local/greenplum-db/greenplum_path.sh" >> $PWD/segment_bashrc
+		echo "export LD_PRELOAD=/lib64/libz.so.1 ps" >> $PWD/segment_bashrc
+  	fi
 
 	#copy generate_data.sh to ~/
 	for ext_host in $(cat $PWD/../segment_hosts.txt); do
@@ -50,19 +54,14 @@ set_segment_bashrc()
 				count=$(ssh $ext_host "grep LD_PRELOAD ~/.bashrc" 2> /dev/null | wc -l)
 				if [ "$count" -eq "0" ]; then
     					echo "Adding LD_PRELOAD to $ext_host .bashrc"
-    					OS=$16
-					if [ "$OS" != "Astra Linux" ]; then
+	 
+					if [ "$NAMEOS" == "Astra Linux" ]; then
+	    					echo "Path LIB for OS Astra Linux"
+						ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
+					else
 						echo "Path LIB for OS RedHat, Linux, RedOS"
       						ssh $ext_host "echo \"export LD_PRELOAD=/lib64/libz.so.1 ps\" >> ~/.bashrc"
-					else
-						echo "Path LIB for OS Astra Linux"
-						ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
 					fi
-					#ORIG#echo "Adding LD_PRELOAD to $ext_host .bashrc"
-     					#Path SH for OS RedHat, Linux, RedOS
-					#ORIG#ssh $ext_host "echo \"export LD_PRELOAD=/lib64/libz.so.1 ps\" >> ~/.bashrc"
-     					#Path LIB for OS Astra Linux
-	  				#ORIG#ssh $ext_host "echo \"export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libz.so.1 ps\" >> ~/.bashrc"
 				fi
 			fi
 		fi
