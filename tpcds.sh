@@ -149,11 +149,11 @@ check_variables()
  	#14
 	local count=$(grep "COMMENTS:" $MYVAR | wc -l)
 	if [ "$count" -eq "0" ]; then
-		echo "#COMMENTS:\"\"" >> $MYVAR
-  		echo "#TYPE ORIENTATION -> heap || row || column"
-    		echo "#TYPE COMPRESS -> null || zlib || rle_type || zstd || quicklz"
-      		echo "#TYPE COMPRESS -> null || value from 1 to 9"
-		new_variable=$(($new_variable + 1))
+		echo "#COMMENTS:" >> $MYVAR
+  		echo "#TYPE_ORIENTATION -> heap || row || column" >> $MYVAR
+    		echo "#TYPE_COMPRESS -> null || zlib || rle_type || zstd || quicklz" >> $MYVAR
+      		echo "#LEVEL_COMPRESS -> null || value from 1 to 9" >> $MYVAR
+		#new_variable=$(($new_variable + 1))
 	fi
 
 	if [ "$new_variable" -gt "0" ]; then
