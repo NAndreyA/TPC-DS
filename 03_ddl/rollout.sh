@@ -34,7 +34,7 @@ if [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "gpdb_postgresql" ]]; then
 	filter="gpdb_postgresql"
 elif [[ "$VERSION" == *"gpdb"* && "$VERSION1" == "null" ]]; then
 	filter="gpdb"
-elif [ "$VERSION" == "postgresql" && "$VERSION1" == "postgresql" ]; then
+elif [[ "$VERSION" == "postgresql" && "$VERSION1" == "postgresql" ]]; then
 	filter="postgresql"
 else
 	echo "ERROR: Unsupported VERSION $VERSION!"
